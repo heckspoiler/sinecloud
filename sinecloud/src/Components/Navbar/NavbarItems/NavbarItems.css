@@ -16,7 +16,6 @@ ul.navbar-items {
       text-decoration: none;
 }
 
-
 .navbar-link::before {
       content: "";
       position: absolute;
