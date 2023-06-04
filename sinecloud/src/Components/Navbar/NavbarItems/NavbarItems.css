@@ -1,26 +1,34 @@
 ul.navbar-items {
       display: flex;
       align-items: center;
+      justify-content: center;
       list-style: none;
-      width: 100%;
+      width: 20rem;
       height: 100%;
       padding: 0;
       gap: 80px;
-      margin-left: 80px;
+      padding-left: 80px;
+      border: 1px solid black;
+
+
 
 }
 
 .navbar-link {
       color: black;
+      scale: 1;
       text-decoration: none;
+
+
 }
+
 
 .navbar-link::before {
       content: "";
       position: absolute;
       display: block;
-      height: 5px;
-      width: 0px;
+      height: 3px;
+      width: 0;
       background-color: black;
       transition: width 0.3s ease-in-out;
       margin-top: 16px;
@@ -28,6 +36,6 @@ ul.navbar-items {
 
 .navbar-link:hover::before {
 
-      width: 30px;
+      width: 2%;
 
 }
