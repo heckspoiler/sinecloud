@@ -19,15 +19,16 @@
   src: url('./general_resources/fonts/Chopper/chopper.otf');
   font-weight: normal;
   font-style: normal;
-
 }
 
 .App {
-  height: 100%;
-  width: 100%;
   background-image: url('general_resources/backgrounds/gradient-landing.png');
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100vw;
+  padding: 10px;
 }
 
 li {
