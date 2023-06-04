@@ -22,13 +22,10 @@
 }
 
 .App {
-  background-image: url('general_resources/backgrounds/gradient-landing.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100%;
-  width: 100vw;
+  height: 100vh;
   padding: 10px;
+  background-image: linear-gradient(rgba(255, 255, 255, .3) .1em, transparent .1em), linear-gradient(90deg, rgba(255, 255, 255, .3) .1em, transparent .1em);
+  background-size: 19.8vw 19.8vw;
 }
 
 li {
