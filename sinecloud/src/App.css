@@ -23,8 +23,8 @@
 
 .App {
   height: 100vh;
-  padding: 10px;
-  background-image: linear-gradient(rgba(255, 255, 255, .3) .1em, transparent .1em), linear-gradient(90deg, rgba(255, 255, 255, .3) .1em, transparent .1em);
+
+  background-image: linear-gradient(rgba(134, 138, 246, .5) .1em, transparent .1rem), linear-gradient(90deg, rgba(134, 138, 246, .5) .1rem, transparent .1em);
   background-size: 19.8vw 19.8vw;
 }
 

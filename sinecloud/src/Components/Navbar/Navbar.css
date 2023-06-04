@@ -1,0 +1,15 @@
+nav.navbar {
+      position: relative;
+      height: calc(3rem + 4vh);
+      width: 100vw;
+      background-color: #FF90E8;
+      position: fixed;
+      top: 0;
+      left: 0;
+      font-family: "Nohemi Medium";
+      border: 2px solid black;
+      box-shadow: 0 4px 14px rgba(22, 2, 110, 0.3);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+}
