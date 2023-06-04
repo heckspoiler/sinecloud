@@ -15,6 +15,14 @@
 }
 
 @font-face {
+  font-family: 'Nohemi Extra-Bold';
+  src: url('./general_resources/fonts/Nohemi/Nohemi-ExtraBold.woff2'), url('./general_resources/fonts/Nohemi/Nohemi-ExtraBold.woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
   font-family: 'Chopper';
   src: url('./general_resources/fonts/Chopper/chopper.otf');
   font-weight: normal;

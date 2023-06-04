@@ -1,0 +1,39 @@
+.searchbar {
+      position: relative;
+      width: 12rem;
+      height: 2rem;
+      background-color: #fff;
+      border: 1.5px solid black;
+      font-family: "Nohemi Extra-Bold";
+      font-size: 0.8rem;
+      padding-left: 40px;
+}
+
+.searchbar::placeholder {
+      font-family: "Nohemi Extra-Bold";
+      font-size: 0.8rem;
+}
+
+.input-wrapper {
+      position: relative;
+      background-color: red;
+      width: 12rem;
+      height: 2rem;
+}
+
+.input-wrapper::before {
+      content: "";
+      background: url("magni-glass.png") no-repeat;
+      position: absolute;
+      width: 20px;
+
+      height: 20px;
+      left: 10px;
+      top: 5px;
+      z-index: 2;
+      background-size: 100%;
+}
+
+.searchbar:focus {
+      outline: none;
+}

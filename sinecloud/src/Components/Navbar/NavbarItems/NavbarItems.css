@@ -8,18 +8,12 @@ ul.navbar-items {
       padding: 0;
       gap: 80px;
       padding-left: 80px;
-      border: 1px solid black;
-
-
-
 }
 
 .navbar-link {
       color: black;
       scale: 1;
       text-decoration: none;
-
-
 }
 
 
@@ -35,7 +29,5 @@ ul.navbar-items {
 }
 
 .navbar-link:hover::before {
-
       width: 2%;
-
 }
