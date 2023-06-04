@@ -1,7 +1,35 @@
+@font-face {
+  font-family: 'Nohemi Medium';
+  src: url('./general_resources/fonts/Nohemi/Nohemi-Medium.woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'Nohemi Bold';
+  src: url('./general_resources/fonts/Nohemi/Nohemi-Bold.woff'), url('./general_resources/fonts/Nohemi/Nohemi-Bold.woff2');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'Chopper';
+  src: url('./general_resources/fonts/Chopper/chopper.otf');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
 .App {
   height: 100%;
   width: 100%;
   background-image: url('general_resources/backgrounds/gradient-landing.png');
   background-size: cover;
   background-position: center;
+}
+
+li {
+  list-style-type: none;
 }
