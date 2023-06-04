@@ -1,0 +1,62 @@
+.waves {
+      position: absolute;
+      margin-top: 2rem;
+}
+
+.wave {
+      position: relative;
+      margin-top: 0.1rem;
+      width: 30rem;
+      height: 2.5rem;
+      background: transparent;
+      overflow: hidden;
+
+
+}
+
+.wave::before {
+      content: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+      position: absolute;
+      color: transparent;
+      font-size: 3rem;
+      text-decoration-style: wavy;
+      text-decoration-color: #FF90E8;
+      text-decoration-line: line-through;
+      transform: translateY(-35%);
+
+}
+
+.wave1,
+.wave2 {
+      z-index: -1;
+}
+
+.wave1::before {
+      animation: animate1 25s linear infinite;
+}
+
+.wave2::before {
+      animation: animate1 20s linear infinite;
+}
+
+.wave3::before {
+      animation: animate1 22s linear infinite;
+}
+
+.wave4::before {
+      animation: animate1 27s linear infinite;
+}
+
+.wave5::before {
+      animation: animate1 23s linear infinite;
+}
+
+@keyframes animate1 {
+      0% {
+            transform: translateX(-7%);
+      }
+
+      100% {
+            transform: translateX(-15%);
+      }
+}

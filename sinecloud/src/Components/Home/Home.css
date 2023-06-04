@@ -1,7 +1,12 @@
-h1 {
+.swirly {
       position: absolute;
-      color: #ececec;
-      font-size: 150px;
-      font-family: "Nohemi Bold";
-      margin-top: 10vh;
+      margin-left: 43rem;
+      margin-top: 2rem;
+
+      animation: spin 15s linear infinite;
+      transform-origin: center center;
+      /* Adjust as needed */
+      transform-style: preserve-3d;
+
+
 }
