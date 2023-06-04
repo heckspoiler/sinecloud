@@ -1,0 +1,52 @@
+.login-section {
+      width: 20rem;
+      height: 100%;
+}
+
+.login-section button {
+      height: 100%;
+      width: 50%;
+      border: none;
+      font-family: "Nohemi Medium";
+      font-size: 1rem;
+}
+
+.login-section button:hover {
+      cursor: pointer;
+}
+
+.login-button {
+      background-color: #FF90E8;
+      border-right: 1.5px solid black !important;
+      transition: all 0.2s ease-in-out;
+}
+
+.login-button::before {
+      content: "";
+      position: absolute;
+      display: block;
+      height: 3px;
+      width: 0%;
+      background-color: black;
+      transition: width 0.3s ease-in-out;
+      margin-top: 18px;
+      margin-left: 4.4%;
+}
+
+.login-button:hover::before {
+      width: 2%;
+}
+
+.signup-button {
+      background-color: #fff;
+      transition: all 0.2s ease-in-out;
+
+
+}
+
+.signup-button:hover {
+      background-color: #90CCED;
+      font-size: 1.1rem;
+
+
+}
