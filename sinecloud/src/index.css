@@ -11,6 +11,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: src("./noise.svg");
 
 
 
@@ -24,10 +25,7 @@ code {
 
 html {
   position: relative;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-image: url('general_resources/backgrounds/gradient-landing.png');
+  background: #1200FF;
   height: 100vh;
   width: 100vw;
   overflow-y: scroll;
