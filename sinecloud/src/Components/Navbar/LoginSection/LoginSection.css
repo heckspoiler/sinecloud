@@ -59,7 +59,9 @@
       width: 20rem;
       top: 4.6rem;
       right: 10rem;
-      border: 1.5px solid black;
+      scale: 1;
+      transition: scale 1s ease-out;
+
 
 }
 
@@ -69,9 +71,15 @@
       align-items: center;
       justify-content: space-evenly;
       height: 100%;
+      overflow: hidden;
       width: 100%;
       background-color: #fff !important;
+      border: 1.5px solid black;
+
+
 }
+
+
 
 .login-popup ul {
 

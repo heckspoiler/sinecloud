@@ -7,6 +7,7 @@ export const LoginSection = () => {
   const toggleLoginPopup = () => {
     setShowLoginPopup(!showLoginPopup);
   };
+
   return (
     <section className="login-section">
       <button className="login-button" onClick={toggleLoginPopup}>
