@@ -30,7 +30,8 @@
       background-color: black;
       transition: width 0.3s ease-in-out;
       margin-top: 18px;
-      margin-left: 4.4%;
+      margin-left: 3.7rem;
+
 }
 
 .login-button:hover::before {
