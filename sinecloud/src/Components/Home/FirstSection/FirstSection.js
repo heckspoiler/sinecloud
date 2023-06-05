@@ -1,8 +1,13 @@
 import { Title } from "./Title/Title";
 import cloudsImage from "./decoration/clouds.png";
+import { motion as m } from "framer-motion";
 import pink from "./decoration/pink.png";
 
 export const FirstSection = () => {
+  const variants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  };
   return (
     <section className="first-section">
       <svg
@@ -64,20 +69,46 @@ export const FirstSection = () => {
 
       <Title />
       <img src={cloudsImage} className="clouds" alt="clouds" />
-      <div className="pink-field-div">Smooth Waves With the MIXCLOUD API</div>
+      <m.div className="pink-field-div">
+        Smooth Waves With the MIXCLOUD API
+      </m.div>
       <section className="colorfields-section">
-        <div className="field field-1 share">
+        <m.div
+          className="field field-1 share"
+          initial="hidden"
+          animate="visible"
+          transition={{ delay: 1.2, duration: 0.6 }}
+          variants={variants}
+        >
           <p>Share</p>
-        </div>
-        <div className="field field-2 listen">
+        </m.div>
+        <m.div
+          className="field field-2 listen"
+          initial="hidden"
+          animate="visible"
+          transition={{ delay: 1.4, duration: 0.8 }}
+          variants={variants}
+        >
           <p>Listen</p>
-        </div>
-        <div className="field field-3 discover">
+        </m.div>
+        <m.div
+          className="field field-3 discover"
+          initial="hidden"
+          animate="visible"
+          transition={{ delay: 1.6, duration: 0.9 }}
+          variants={variants}
+        >
           <p>Discover</p>
-        </div>
-        <div className="field field-4 enjoy">
+        </m.div>
+        <m.div
+          className="field field-4 enjoy"
+          initial="hidden"
+          animate="visible"
+          transition={{ delay: 1.8, duration: 0.3 }}
+          variants={variants}
+        >
           <p>Enjoy</p>
-        </div>
+        </m.div>
       </section>
       <img src={cloudsImage} className="clouds" alt="clouds" />
     </section>
