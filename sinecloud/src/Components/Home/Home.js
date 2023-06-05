@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Title } from "./Title/Title";
 import cloudsImage from "./decoration/clouds.png";
-import swirly from "./decoration/swirly.svg";
+import pink from "./decoration/pink.png";
 
 export const Home = () => {
   return (
@@ -68,7 +68,9 @@ export const Home = () => {
 
       <Title />
       <img src={cloudsImage} className="clouds" alt="clouds" />
-      <img src={cloudsImage} className="clouds" alt="clouds" />
+      {/* <img src={cloudsImage} className="clouds" alt="clouds" /> */}
+      {/* <img src={pink} className="pink-field" /> */}
+      <div className="pink-field-div">Smooth Waves With the MIXCLOUD API</div>
     </section>
   );
 };
