@@ -33,9 +33,3 @@
       z-index: 2;
       background-size: 100%;
 }
-
-.searchbar:focus {
-      outline: 1.5px solid black;
-      border-radius: 0px;
-
-}

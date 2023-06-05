@@ -9,8 +9,8 @@ export const SecondSection = () => {
         <h2 className="second-section-title">discover new music</h2>
         <div className="second-section_block"></div>
         <p>
-          Browse through the best radio stations out there and expand your
-          musical horizon with us
+          Browse through the best radio stations out there and find new gems
+          with us
         </p>
       </section>
       <Logos />

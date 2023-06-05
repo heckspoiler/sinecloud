@@ -10,7 +10,8 @@
 
 }
 
-.second-section h2 {
+.second-section h2,
+h2 {
       font-family: "Chopper";
       font-size: 50px;
       color: #ececec

@@ -39,6 +39,12 @@ li {
   list-style-type: none;
 }
 
+input:focus {
+  outline: 1.5px solid black;
+  border-radius: 0px;
+
+}
+
 body {
   margin-top: calc(2rem + 3vh);
   background-image: linear-gradient(rgba(134, 138, 246, .3) .1em, transparent .08rem), linear-gradient(90deg, rgba(134, 138, 246, .3) .08rem, transparent .1em);
