@@ -1,7 +1,6 @@
 import { Title } from "./Title/Title";
 import cloudsImage from "./decoration/clouds.png";
 import { motion as m } from "framer-motion";
-import pink from "./decoration/pink.png";
 
 export const FirstSection = () => {
   const variants = {

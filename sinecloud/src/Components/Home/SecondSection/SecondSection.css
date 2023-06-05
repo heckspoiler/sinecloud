@@ -14,8 +14,15 @@
 h2 {
       font-family: "Chopper";
       font-size: 50px;
-      color: #ececec
+      color: #ececec;
+
 }
+
+.second-title {
+      opacity: 0;
+}
+
+
 
 .second-section_block {
       height: 1rem;
@@ -30,6 +37,7 @@ h2 {
 
 .text-section {
       margin-top: 2rem;
+      opacity: 0;
 }
 
 .text-section p {
