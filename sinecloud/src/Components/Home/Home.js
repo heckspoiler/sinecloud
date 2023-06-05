@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Title } from "./Title/Title";
 import cloudsImage from "./decoration/clouds.png";
+import swirly from "./decoration/swirly.svg";
 
 export const Home = () => {
   return (
