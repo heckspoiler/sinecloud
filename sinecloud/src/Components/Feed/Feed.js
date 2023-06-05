@@ -10,7 +10,7 @@ export const Feed = () => {
     };
   }, []);
   return (
-    <section>
+    <section className="feed">
       <h1 class="feed-title">your personal feed</h1>
     </section>
   );

@@ -2,6 +2,8 @@
       height: 100%;
       width: 100vw;
       position: relative;
+      background-image: linear-gradient(rgba(134, 138, 246, .3) .1em, transparent .08rem), linear-gradient(90deg, rgba(134, 138, 246, .3) .08rem, transparent .1em);
+      background-size: 19.8vw 19.8vw;
 }
 
 .first-section {
@@ -25,14 +27,29 @@
 .clouds {
       position: absolute;
       scale: 0.8;
-      opacity: 0.4;
+      opacity: 0.8;
 }
 
 .clouds:nth-of-type(1) {
       position: absolute;
       margin-top: 17rem;
+      animation: firstcloud 2s infinite ease-in;
 
 
+}
+
+@keyframes firstcloud {
+      0% {
+            scale: 1
+      }
+
+      50% {
+            scale: 1.015
+      }
+
+      100% {
+            scale: 1
+      }
 }
 
 .clouds:nth-of-type(2) {
