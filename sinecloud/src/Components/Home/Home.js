@@ -3,7 +3,7 @@ import "./Home.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Title } from "./Title/Title";
-import Swirly from "./decoration/swirly.svg";
+import cloudsImage from "./decoration/clouds.png";
 
 export const Home = () => {
   return (
@@ -66,6 +66,8 @@ export const Home = () => {
       </svg>
 
       <Title />
+      <img src={cloudsImage} className="clouds" alt="clouds" />
+      <img src={cloudsImage} className="clouds" alt="clouds" />
     </section>
   );
 };

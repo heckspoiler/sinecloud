@@ -15,6 +15,12 @@ export const NavbarItems = () => {
           Stations
         </Link>
       </li>
+
+      <li>
+        <Link to="/feed" className="navbar-link">
+          Feed
+        </Link>
+      </li>
     </ul>
   );
 };

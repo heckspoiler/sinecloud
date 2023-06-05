@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Home } from "./Components/Home/Home";
 import { Navbar } from "./Components/Navbar/Navbar";
 import { Stations } from "./Components/Stations/Stations";
+import { Feed } from "./Components/Feed/Feed";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/stations" element={<Stations />} />
+          <Route path="/feed" element={<Feed />} />
         </Routes>
       </div>
     </Router>

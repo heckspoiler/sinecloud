@@ -1,12 +1,34 @@
+.home {
+      height: 100%;
+      width: 100vw;
+}
+
 .swirly {
       position: absolute;
       margin-left: 43rem;
       margin-top: 2rem;
-
       animation: spin 15s linear infinite;
       transform-origin: center center;
       /* Adjust as needed */
       transform-style: preserve-3d;
+}
 
+/*positioning decoration */
 
+.clouds {
+      position: absolute;
+      scale: 0.8;
+      opacity: 0.23;
+}
+
+.clouds:nth-of-type(1) {
+      margin-top: 16rem;
+
+}
+
+.clouds:nth-of-type(2) {
+
+      rotate: 30deg;
+      margin-top: 24rem;
+      margin-left: 47rem;
 }
