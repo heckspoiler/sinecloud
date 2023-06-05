@@ -1,6 +1,13 @@
 .home {
       height: 100%;
       width: 100vw;
+      position: relative;
+}
+
+.first-section {
+      position: relative;
+      height: 100vh;
+      width: 100vw;
 }
 
 .swirly {
@@ -36,16 +43,66 @@
 
 .pink-field-div {
       position: absolute;
-      font-size: 2.5rem;
-      margin-left: 30rem;
+      font-size: 2rem;
+      margin-left: 35rem;
       margin-top: calc(12.2rem + 10vh);
       font-family: "Nohemi Bold";
       background-color: #FF90E8;
-      width: 50rem;
+      width: calc(38rem + 5vw);
       text-align: center;
       border-radius: 40px;
-
-      padding: 10px;
+      padding: 10px 0 10px 0;
       border: 2px solid black;
       box-shadow: 1px 6px 1px black;
+}
+
+.colorfields-section {
+      position: absolute;
+      background-color: transparent;
+      width: 32rem;
+      height: 16rem;
+      margin-left: 44rem;
+      margin-top: 22rem;
+}
+
+.field {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid black;
+      width: calc(7rem + 2vw);
+      height: 4rem;
+      border-radius: 40px;
+      font-size: 1.7rem;
+      font-family: "Nohemi Bold";
+      box-shadow: 1px 4px 1px black;
+}
+
+.field:nth-of-type(1) {
+      margin-left: -2rem;
+      background-color: #EE8F9E;
+      margin-top: 2.5rem;
+      rotate: 30deg;
+}
+
+.field:nth-of-type(2) {
+      margin-left: 7rem;
+      margin-top: 2rem;
+      rotate: 20deg;
+      background-color: #30A69A;
+}
+
+.field:nth-of-type(3) {
+      margin-left: -4rem;
+      margin-top: 8rem;
+      background-color: #CFED90;
+      rotate: 15deg;
+}
+
+.field:nth-of-type(4) {
+      margin-left: 7rem;
+      margin-top: 9rem;
+      background-color: #90CCED;
+      rotate: -33deg;
 }

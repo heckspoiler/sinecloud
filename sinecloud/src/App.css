@@ -30,17 +30,22 @@
 }
 
 .App {
-  height: 100vh;
-  width: 100vw;
+
   max-width: 1552px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: calc(2rem + 3vh);
-  background-image: linear-gradient(rgba(134, 138, 246, .3) .1em, transparent .08rem), linear-gradient(90deg, rgba(134, 138, 246, .3) .08rem, transparent .1em);
-  background-size: 19.8vw 19.8vw;
+
 
 }
 
 li {
   list-style-type: none;
+}
+
+body {
+  margin-top: calc(2rem + 3vh);
+  background-image: linear-gradient(rgba(134, 138, 246, .3) .1em, transparent .08rem), linear-gradient(90deg, rgba(134, 138, 246, .3) .08rem, transparent .1em);
+  background-size: 19.8vw 19.8vw;
+  height: 100vh;
+  width: 100vw;
 }
