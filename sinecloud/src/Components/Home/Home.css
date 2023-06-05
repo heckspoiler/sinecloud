@@ -39,6 +39,17 @@
 
 }
 
+.clouds:nth-of-type(2) {
+      position: absolute;
+      margin-top: 40rem !important;
+      margin-left: 52rem !important;
+      animation: firstcloud 3s infinite cubic-bezier(0.215, 0.610, 0.355, 1);
+      scale: 0.5;
+      rotate: - 40deg !important;
+
+
+}
+
 @keyframes firstcloud {
       0% {
             scale: 0.5

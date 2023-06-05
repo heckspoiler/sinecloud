@@ -1,5 +1,6 @@
 import React from "react";
 import "./SecondSection.css";
+import { Logos } from "./Logos/Logos";
 
 export const SecondSection = () => {
   return (
@@ -12,6 +13,7 @@ export const SecondSection = () => {
           musical horizon with us
         </p>
       </section>
+      <Logos />
       <h2>and much more</h2>
     </section>
   );
