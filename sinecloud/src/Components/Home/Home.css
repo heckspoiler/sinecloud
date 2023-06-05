@@ -27,28 +27,29 @@
 .clouds {
       position: absolute;
       scale: 0.8;
-      opacity: 0.8;
+      opacity: 0.6;
 }
 
 .clouds:nth-of-type(1) {
       position: absolute;
       margin-top: 17rem;
-      animation: firstcloud 2s infinite ease-in;
+      animation: firstcloud 3s infinite cubic-bezier(0.215, 0.610, 0.355, 1);
+      scale: 0.5;
 
 
 }
 
 @keyframes firstcloud {
       0% {
-            scale: 1
+            scale: 0.5
       }
 
       50% {
-            scale: 1.015
+            scale: .52
       }
 
       100% {
-            scale: 1
+            scale: 0.5
       }
 }
 
