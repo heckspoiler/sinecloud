@@ -79,6 +79,7 @@ export const FirstSection = () => {
           <p>Enjoy</p>
         </div>
       </section>
+      <img src={cloudsImage} className="clouds" alt="clouds" />
     </section>
   );
 };
