@@ -69,7 +69,7 @@ export const FirstSection = () => {
       <Title />
       <img src={cloudsImage} className="clouds" alt="clouds" />
       <m.div className="pink-field-div">
-        Smooth Waves With the MIXCLOUD API
+        Smooth Waves With the SOUNDCLOUD API
       </m.div>
       <section className="colorfields-section">
         <m.div
