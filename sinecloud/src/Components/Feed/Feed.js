@@ -3,9 +3,15 @@ import "./Feed.css";
 import axios from "axios";
 
 export const Feed = () => {
-  return (
-    <div>
-      <h1>Feed</h1>
-    </div>
-  );
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios.get("http://localhost:5001/api/feed");
+
+      console.log(result.data);
+    };
+
+    fetchData();
+  }, []);
+
+  return <div>Feed Component</div>;
 };
