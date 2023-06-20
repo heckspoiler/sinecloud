@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import ReactPlayer from "react-player";
 import axios from "axios";
 import "./Feed.css";
+import { CSSTransition } from "react-transition-group";
 
 const Feed = () => {
   const [user, setUser] = useState(null);
@@ -35,7 +36,7 @@ const Feed = () => {
         console.error("Error:", error);
       } finally {
         setIsLoading(false);
-        setTimeout(() => setIsLoadingComplete(true), 1000);
+        setTimeout(() => setIsLoadingComplete(true), 1000); // Adjust delay to match your exit animation length
       }
     };
 
@@ -49,20 +50,24 @@ const Feed = () => {
         good music
       </h1>
       <section className="feed-container">
-        {isLoading ? (
+        {!isLoadingComplete && (
           <div className="loading-container" role="status">
             <div
-              className={`loading-left ${!isLoading ? "exit-left" : ""}`}
+              className={`loading-left ${
+                !isLoading && !isLoadingComplete ? "exit-left" : ""
+              }`}
               role="status"
             ></div>
             <div
-              className={`loading-right ${!isLoading ? "exit-right" : ""}`}
+              className={`loading-right ${
+                !isLoading && !isLoadingComplete ? "exit-right" : ""
+              }`}
               role="status"
             ></div>
           </div>
-        ) : (
+        )}
+        {!isLoading &&
           tracks.map((track) => {
-            // assuming `track.url` exists and is the URL for the song
             return (
               <ReactPlayer
                 key={track.id}
@@ -70,8 +75,7 @@ const Feed = () => {
                 className="react-player"
               />
             );
-          })
-        )}
+          })}
       </section>
     </div>
   );

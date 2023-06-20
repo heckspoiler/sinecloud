@@ -21,6 +21,7 @@
     "react-scripts": "5.0.1",
     "react-soundplayer": "^1.0.5",
     "react-spring": "^9.7.1",
+    "react-transition-group": "^4.4.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
