@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Home } from "./Components/Home/Home";
 import { Navbar } from "./Components/Navbar/Navbar";
 import { Stations } from "./Components/Stations/Stations";
-import { Feed } from "./Components/Feed/Feed";
+import Feed from "./Components/Feed/Feed";
 
 function App() {
   return (

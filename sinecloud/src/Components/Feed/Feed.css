@@ -4,8 +4,95 @@
       display: flex;
       flex-direction: column;
       width: 100%;
+      overflow: scroll;
+}
+
+.feed h1 {
+      position: fixed;
+      top: 0;
+      left: 0;
+      font-style: italic;
+      mix-blend-mode: screen;
+      width: 40%;
+      letter-spacing: -5px;
+      font-size: 6rem;
 }
 
 .feed-title {
       font-size: 5rem;
+
+}
+
+.feed-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      margin-top: 15rem;
+      gap: 40px;
+      z-index: 1;
+}
+
+.react-player {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 10px 10px 1px #FF90E8;
+      border-radius: 80px;
+
+}
+
+.loading-container {
+      height: 100vh;
+      width: 100vw;
+      top: 0;
+      left: 0;
+      position: absolute;
+      z-index: 13;
+      display: flex;
+      flex-direction: row;
+
+}
+
+.loading-left {
+      height: 100%;
+      width: 50%;
+      background-color: #FF90E8;
+
+
+
+}
+
+.loading-right {
+      height: 100%;
+      width: 50%;
+      background-color: #FF90E8;
+
+
+}
+
+.exit-left {
+      animation: left 1s forwards;
+}
+
+.exit-right {
+      animation: right 1s forwards;
+}
+
+@keyframes left {
+      0% {
+            margin-left: 0;
+      }
+
+      100% {
+            margin-left: -100vw;
+      }
+}
+
+@keyframes right {
+      0% {
+            margin-right: 0;
+      }
+
+      100% {
+            margin-right: 100vw;
+      }
 }
