@@ -9,7 +9,7 @@ export const FirstSection = () => {
   };
   return (
     <section className="first-section">
-      <svg
+      {/* <svg
         className="swirly"
         width="120"
         height="162"
@@ -64,7 +64,7 @@ export const FirstSection = () => {
             />
           </filter>
         </defs>
-      </svg>
+      </svg> */}
 
       <Title />
       <img src={cloudsImage} className="clouds" alt="clouds" />

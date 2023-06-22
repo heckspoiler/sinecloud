@@ -31,12 +31,26 @@
       z-index: 1;
 }
 
+.feed-player-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.feed-player-container img {
+      position: absolute;
+      scale: 0.5;
+      margin-left: 80%;
+      cursor: pointer;
+}
+
+
+
 .react-player {
       width: 80%;
-      margin-left: auto;
-      margin-right: auto;
       box-shadow: 10px 10px 1px #FF90E8;
       border-radius: 80px;
+      align-self: center;
 
 }
 
