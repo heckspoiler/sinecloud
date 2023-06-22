@@ -46,14 +46,14 @@ const Feed = () => {
           )
         );
 
-        setUsers(responses.map((response) => response.user)); // check this out bc of structuring
+        setUsers(responses.map((response) => response.user)); // check this out bc of structuring, ask GPT if this useage is valid or not.
         setTracks(responses.flatMap((response) => response.tracks));
-        console.log(
-          responses.forEach((response) => {
-            console.log(response);
-            users.push(response);
-          })
-        );
+        const users = responses.map((response) => {
+          return {
+            user: response.user,
+            tracks: response.tracks,
+          };
+        });
       } catch (error) {
         console.error("Error:", error);
       } finally {
@@ -61,11 +61,9 @@ const Feed = () => {
         setTimeout(() => setIsLoadingComplete(true), 1000);
       }
     };
-
+    console.log(users);
     fetchData();
   }, []);
-
-  console.log(users);
 
   return (
     <div className="feed">
