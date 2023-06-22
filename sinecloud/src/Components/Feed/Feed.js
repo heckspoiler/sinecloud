@@ -1,47 +1,71 @@
 import React, { useState, useEffect } from "react";
 import ReactPlayer from "react-player";
-import axios from "axios";
 import "./Feed.css";
-import { CSSTransition } from "react-transition-group";
+import faultradio from "../Home/SecondSection/Logos/radio-stations/fault-radio.png";
+import kioskradio from "../Home/SecondSection/Logos/radio-stations/kiosk-radio.png";
+import nts from "../Home/SecondSection/Logos/radio-stations/nts.png";
+import thelotradio from "../Home/SecondSection/Logos/radio-stations/the-lot-radio.png";
+import trnstnradio from "../Home/SecondSection/Logos/radio-stations/trnstn-radio.png";
 
 const Feed = () => {
-  const [user, setUser] = useState(null);
+  const [users, setUsers] = useState(null);
   const [tracks, setTracks] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isLoadingComplete, setIsLoadingComplete] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
+      const profileURLs = [
+        "kioskradio",
+        // "trnstnradio",
+        // "thelotradio",
+        // "nts-latest",
+        // "faultradio",
+      ];
+
       try {
-        const userResponse = await fetch(
-          "https://soundcloud4.p.rapidapi.com/user/info?profile_url=https%3A%2F%2Fsoundcloud.com%2Fkioskradio",
-          {
-            method: "GET",
-            headers: {
-              "X-RapidAPI-Key":
-                "439b27de4amshb8504f8f9c5e92ap1c69f7jsn6ee0a06dd329",
-              "X-RapidAPI-Host": "soundcloud4.p.rapidapi.com",
-            },
-          }
+        const arr = [];
+        const responses = await Promise.all(
+          profileURLs.map((profile_url) =>
+            fetch(
+              `https://soundcloud4.p.rapidapi.com/user/info?profile_url=https%3A%2F%2Fsoundcloud.com%2F${encodeURIComponent(
+                profile_url
+              )}`,
+              {
+                method: "GET",
+                headers: {
+                  "X-RapidAPI-Key":
+                    "439b27de4amshb8504f8f9c5e92ap1c69f7jsn6ee0a06dd329",
+                  "X-RapidAPI-Host": "soundcloud4.p.rapidapi.com",
+                },
+              }
+            ).then((response) => {
+              if (!response.ok) throw new Error("Network response was not ok");
+              return response.json();
+            })
+          )
         );
 
-        if (!userResponse.ok) {
-          throw new Error("Network response was not ok");
-        }
-
-        const userData = await userResponse.json();
-        setUser(userData);
-        setTracks(userData.tracks);
+        setUsers(responses.map((response) => response.user)); // check this out bc of structuring
+        setTracks(responses.flatMap((response) => response.tracks));
+        console.log(
+          responses.forEach((response) => {
+            console.log(response);
+            users.push(response);
+          })
+        );
       } catch (error) {
         console.error("Error:", error);
       } finally {
         setIsLoading(false);
-        setTimeout(() => setIsLoadingComplete(true), 1000); // Adjust delay to match your exit animation length
+        setTimeout(() => setIsLoadingComplete(true), 1000);
       }
     };
 
     fetchData();
   }, []);
+
+  console.log(users);
 
   return (
     <div className="feed">
@@ -69,11 +93,14 @@ const Feed = () => {
         {!isLoading &&
           tracks.map((track) => {
             return (
-              <ReactPlayer
-                key={track.id}
-                url={track.url}
-                className="react-player"
-              />
+              <div className="feed-player-container">
+                <ReactPlayer
+                  key={track.id}
+                  url={track.url}
+                  className="react-player"
+                />
+                <img src={users.username} />
+              </div>
             );
           })}
       </section>
