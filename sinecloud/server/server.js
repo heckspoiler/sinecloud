@@ -35,6 +35,7 @@ app.get("/api/feed", async (req, res) => {
 });
 
 const testArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const test = "test";
 
 const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
