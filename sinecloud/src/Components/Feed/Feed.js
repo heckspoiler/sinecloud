@@ -69,7 +69,7 @@ const Feed = () => {
     <div className="feed">
       <h1>
         Feed me <br />
-        good music
+        new music
       </h1>
       <section className="feed-container">
         {!isLoadingComplete && (
