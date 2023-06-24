@@ -17,10 +17,10 @@ const Feed = () => {
     const fetchData = async () => {
       const profileURLs = [
         "kioskradio",
-        // "trnstnradio",
-        // "thelotradio",
-        // "nts-latest",
-        // "faultradio",
+        "trnstnradio",
+        "thelotradio",
+        "nts-latest",
+        "faultradio",
       ];
 
       try {
