@@ -16,7 +16,7 @@ const Feed = () => {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:4000/")
+    fetch("http://localhost:4000/api/soundcloud")
       .then((response) => {
         if (!response.ok)
           throw new Error("Request failed with status " + response.status);

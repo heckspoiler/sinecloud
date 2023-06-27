@@ -13,16 +13,17 @@ app.use(
   })
 );
 
-const arr = [];
+app.get("/api/soundcloud", async (req, res) => {
+  const arr = []; // move arr declaration here
 
-const fetchData = async (res) => {
   const profileURLs = [
     "kioskradio",
-    // "trnstnradio",
+    "trnstnradio",
     // "thelotradio",
     // "nts-latest",
     // "faultradio",
   ];
+
   try {
     const responses = await Promise.all(
       profileURLs.map((profile_url) =>
@@ -40,7 +41,6 @@ const fetchData = async (res) => {
           }
         ).then((response) => {
           if (!response.ok) throw new Error("Network response was not ok");
-          console.log(response);
           return response.json();
         })
       )
@@ -50,29 +50,16 @@ const fetchData = async (res) => {
       const fetchObj = {
         user: data.username,
       };
-      console.log(data.username);
       arr.push(fetchObj);
     });
 
-    res.json(arr);
+    res.json({
+      message: arr,
+    });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: "Failed to fetch SoundCloud data abcdefg" });
+    res.status(500).json({ error: "Failed to fetch SoundCloud data" });
   }
-};
-
-console.log(arr);
-
-app.get("/", (req, res) => {
-  const data = "Hello from the backend!";
-
-  res.json({ message: data });
-});
-
-app.get("/api/soundcloud", (req, res) => {
-  res.json({
-    message: "Hello from the server!",
-  });
 });
 
 app.listen(PORT, () => {
