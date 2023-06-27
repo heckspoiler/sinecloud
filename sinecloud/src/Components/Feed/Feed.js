@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import ReactPlayer from "react-player";
-import axios from "axios";
 import "./Feed.css";
 import faultradio from "../Home/SecondSection/Logos/radio-stations/fault-radio.png";
 import kioskradio from "../Home/SecondSection/Logos/radio-stations/kiosk-radio.png";
@@ -23,7 +22,8 @@ const Feed = () => {
         return response.json();
       })
       .then((data) => {
-        setMessage(data.message); // Set the message received from the backend
+        console.log(Array.isArray(data.message));
+        setMessage(data); // Set the message received from the backend
       })
       .catch((error) => {
         console.error(error);
@@ -36,7 +36,8 @@ const Feed = () => {
       <h1>
         Feed me <br />
         new music
-        {message}
+        {Array.isArray(message) &&
+          message.map((item, index) => <p key={index}>{item.user}</p>)}
       </h1>
       <section className="feed-container">
         {!isLoadingComplete && (

@@ -49,6 +49,7 @@ app.get("/api/soundcloud", async (req, res) => {
     responses.forEach((data) => {
       const fetchObj = {
         user: data.username,
+        tracks: data.tracks,
       };
       arr.push(fetchObj);
     });
