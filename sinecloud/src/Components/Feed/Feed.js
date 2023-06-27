@@ -13,20 +13,21 @@ const Feed = () => {
   const [tracks, setTracks] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isLoadingComplete, setIsLoadingComplete] = useState(false);
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:4000/api/soundcloud")
+    fetch("http://localhost:4000/")
       .then((response) => {
         if (!response.ok)
           throw new Error("Request failed with status " + response.status);
         return response.json();
       })
       .then((data) => {
-        console.log("hello"); // Log the custom message in the console
-        // Process the response data here
+        setMessage(data.message); // Set the message received from the backend
       })
       .catch((error) => {
         console.error(error);
+        // Handle error case
       });
   }, []);
 
@@ -35,6 +36,7 @@ const Feed = () => {
       <h1>
         Feed me <br />
         new music
+        {message}
       </h1>
       <section className="feed-container">
         {!isLoadingComplete && (

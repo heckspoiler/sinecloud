@@ -63,6 +63,12 @@ const fetchData = async (res) => {
 
 console.log(arr);
 
+app.get("/", (req, res) => {
+  const data = "Hello from the backend!";
+
+  res.json({ message: data });
+});
+
 app.get("/api/soundcloud", (req, res) => {
   res.json({
     message: "Hello from the server!",
