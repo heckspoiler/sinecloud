@@ -12,7 +12,7 @@ const Feed = () => {
   const [tracks, setTracks] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isLoadingComplete, setIsLoadingComplete] = useState(false);
-  const [message, setMessage] = useState("");
+  const [usersData, setUsersData] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:4000/api/soundcloud")
@@ -22,8 +22,8 @@ const Feed = () => {
         return response.json();
       })
       .then((data) => {
-        console.log(Array.isArray(data.message));
-        setMessage(data); // Set the message received from the backend
+        console.log(data); // print the raw data
+        setUsersData(data.message);
       })
       .catch((error) => {
         console.error(error);
@@ -31,41 +31,29 @@ const Feed = () => {
       });
   }, []);
 
+  console.log(usersData); // log to see the data structure
+
   return (
     <div className="feed">
       <h1>
         Feed me <br />
         new music
-        {Array.isArray(message) &&
-          message.map((item, index) => <p key={index}>{item.user}</p>)}
+        {usersData &&
+          usersData.map((user, index) => <p key={index}>{user.user}</p>)}
       </h1>
       <section className="feed-container">
-        {!isLoadingComplete && (
-          <div className="loading-container" role="status">
-            <div
-              className={`loading-left ${
-                !isLoading && !isLoadingComplete ? "exit-left" : ""
-              }`}
-              role="status"
-            ></div>
-            <div
-              className={`loading-right ${
-                !isLoading && !isLoadingComplete ? "exit-right" : ""
-              }`}
-              role="status"
-            ></div>
-          </div>
-        )}
         {!isLoading &&
           tracks.map((track) => {
             return (
-              <div className="feed-player-container">
+              <div
+                className="feed-player-container"
+                key={usersData.tracks.title}
+              >
                 <ReactPlayer
-                  key={track.id}
-                  url={track.url}
+                  url={usersData.tracks.url}
                   className="react-player"
                 />
-                <img src={users.username} />
+                <img src={usersData.username} alt={usersData.username} />
               </div>
             );
           })}
