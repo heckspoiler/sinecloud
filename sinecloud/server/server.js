@@ -64,20 +64,9 @@ const fetchData = async (res) => {
 console.log(arr);
 
 app.get("/api/soundcloud", (req, res) => {
-  fetchData()
-    .then(() => {
-      res.json(arr);
-    })
-    .catch((error) => {
-      console.log(error);
-      res.status(500).json({
-        error: "this is a test you bitch",
-      });
-    });
-});
-
-app.get("/", (req, res) => {
-  console.log(`Server is listening on ${PORT}`);
+  res.json({
+    message: "Hello from the server!",
+  });
 });
 
 app.listen(PORT, () => {

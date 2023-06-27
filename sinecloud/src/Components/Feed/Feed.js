@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ReactPlayer from "react-player";
+import axios from "axios";
 import "./Feed.css";
 import faultradio from "../Home/SecondSection/Logos/radio-stations/fault-radio.png";
 import kioskradio from "../Home/SecondSection/Logos/radio-stations/kiosk-radio.png";
@@ -13,14 +14,20 @@ const Feed = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isLoadingComplete, setIsLoadingComplete] = useState(false);
 
-  const fetchUserData = () => {
-    fetch("/api/soundcloud").then((response) => {
-      console.log(response);
-    });
-  };
-
   useEffect(() => {
-    fetchUserData();
+    fetch("http://localhost:4000/api/soundcloud")
+      .then((response) => {
+        if (!response.ok)
+          throw new Error("Request failed with status " + response.status);
+        return response.json();
+      })
+      .then((data) => {
+        console.log("hello"); // Log the custom message in the console
+        // Process the response data here
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   }, []);
 
   return (
