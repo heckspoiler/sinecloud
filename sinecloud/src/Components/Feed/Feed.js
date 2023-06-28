@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import ReactPlayer from "react-player";
 import "./Feed.css";
 import faultradio from "../Home/SecondSection/Logos/radio-stations/fault-radio.png";
@@ -7,11 +7,27 @@ import nts from "../Home/SecondSection/Logos/radio-stations/nts.png";
 import thelotradio from "../Home/SecondSection/Logos/radio-stations/the-lot-radio.png";
 import trnstnradio from "../Home/SecondSection/Logos/radio-stations/trnstn-radio.png";
 
+const getLogoByUser = (user) => {
+  switch (user) {
+    case "faultradio":
+      return faultradio;
+    case "kioskradio":
+      return kioskradio;
+    case "nts-latest":
+      return nts;
+    case "thelotradio":
+      return thelotradio;
+    case "trnstnradio":
+      return trnstnradio;
+    default:
+      return null;
+  }
+};
+
 const Feed = () => {
-  const [tracks, setTracks] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [isLoadingComplete, setIsLoadingComplete] = useState(false);
   const [usersData, setUsersData] = useState([]);
+  const [currentRadioStation, setCurrentRadioStation] = useState("");
+  const elementsRef = useRef([]);
 
   useEffect(() => {
     fetch("http://localhost:4000/api/soundcloud")
@@ -28,7 +44,37 @@ const Feed = () => {
         console.error(error);
       });
   }, []);
-  console.log(typeof usersData[0]?.user);
+  console.log(usersData[0]?.user);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setCurrentRadioStation(entry.target.dataset.user); // Get user from data attribute and update state
+            console.log("Element is visible", entry.target.className);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    elementsRef.current.forEach((element) => {
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    return () => {
+      elementsRef.current.forEach((element) => {
+        if (element) {
+          observer.unobserve(element);
+        }
+      });
+    };
+  }, [usersData]);
+
+  console.log("i would like to display", getLogoByUser(currentRadioStation));
 
   return (
     <div className="feed">
@@ -36,23 +82,29 @@ const Feed = () => {
         Feed me <br />
         new music
       </h1>
-      <h1 className="track-title-display">
-        {usersData &&
-          usersData.map((user, index) => (
-            <p key={index}>{user.tracks.title}</p>
-          ))}
-      </h1>
-      <img src={usersData.username} className="radio-station-img" />
-
-      <section className="feed-container">
-        {usersData.map((user) =>
-          user.tracks.map((track, trackIndex) => (
-            <div className="feed-player-container" key={trackIndex}>
-              <ReactPlayer url={track.url} className="react-player" />
-            </div>
-          ))
+      <div className="rotate-div"></div>
+      <div className="img-container">
+        {usersData.length > 0 && (
+          <img
+            src={getLogoByUser(currentRadioStation)}
+            className="radio-station-img"
+            alt={currentRadioStation}
+          />
         )}
-      </section>
+      </div>
+
+      {usersData.map((user, index) =>
+        user.tracks.map((track, trackIndex) => (
+          <div
+            className="feed-player-container"
+            data-user={user.user}
+            ref={(element) => elementsRef.current.push(element)}
+            key={trackIndex}
+          >
+            <ReactPlayer url={track.url} className="react-player" />
+          </div>
+        ))
+      )}
     </div>
   );
 };

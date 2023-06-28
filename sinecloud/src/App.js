@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { Suspense, lazy, useEffect, useState } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "intersection-observer";
 import { motion } from "framer-motion";
 import { Home } from "./Components/Home/Home";
 import { Navbar } from "./Components/Navbar/Navbar";

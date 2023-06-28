@@ -38,7 +38,7 @@ export const SecondSection = () => {
       </m.section>
       <Logos />
       <m.h2 animate={animationLowerText} className="second-title">
-        and much more
+        and many more
       </m.h2>
     </section>
   );

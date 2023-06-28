@@ -20,7 +20,7 @@ const fetchData = async () => {
   try {
     const profileURLs = [
       "kioskradio",
-      // "trnstnradio",
+      "trnstnradio",
       // "thelotradio",
       // "nts-latest",
       // "faultradio",
