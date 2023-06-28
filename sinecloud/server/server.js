@@ -13,18 +13,19 @@ app.use(
   })
 );
 
-app.get("/api/soundcloud", async (req, res) => {
-  const arr = []; // move arr declaration here
+let dataCache = null; // Store the fetched data
+let isFetching = false; // Flag variable to control fetching behavior
 
-  const profileURLs = [
-    "kioskradio",
-    // "trnstnradio",
-    // "thelotradio",
-    // "nts-latest",
-    // "faultradio",
-  ];
-
+const fetchData = async () => {
   try {
+    const profileURLs = [
+      "kioskradio",
+      // "trnstnradio",
+      // "thelotradio",
+      // "nts-latest",
+      // "faultradio",
+    ];
+
     const responses = await Promise.all(
       profileURLs.map((profile_url) =>
         fetch(
@@ -46,24 +47,41 @@ app.get("/api/soundcloud", async (req, res) => {
       )
     );
 
-    responses.forEach((data) => {
-      const fetchObj = {
-        user: data.username,
-        tracks: data.tracks,
-      };
-      arr.push(fetchObj);
-    });
+    const arr = responses.map((data) => ({
+      user: data.username,
+      tracks: data.tracks,
+    }));
 
-    res.json({
-      message: arr,
-    });
+    dataCache = arr; // Update the data cache
+
+    console.log("Data fetched:", arr);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: "Failed to fetch SoundCloud data" });
+  } finally {
+    isFetching = false; // Reset the flag after fetching is completed
+  }
+};
+
+const fetchInterval = 60 * 60 * 500; // Fetch every 30 minutes
+
+// Fetch data initially and start the interval
+fetchData();
+setInterval(() => {
+  if (!isFetching) {
+    fetchData();
+  }
+}, fetchInterval);
+
+app.get("/api/soundcloud", (req, res) => {
+  if (dataCache) {
+    res.json({
+      message: dataCache,
+    });
+  } else {
+    res.status(500).json({ error: "No data available" });
   }
 });
 
 app.listen(PORT, () => {
-  console.log("Port's working wtf");
-  console.log(`Server is listening on ${PORT}, coming from the server side`);
+  console.log(`Server is listening on ${PORT}`);
 });

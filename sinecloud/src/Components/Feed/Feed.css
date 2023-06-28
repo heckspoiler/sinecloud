@@ -46,12 +46,6 @@
       align-items: center;
 }
 
-.feed-player-container img {
-      position: absolute;
-      scale: 0.5;
-      margin-left: 80%;
-      cursor: pointer;
-}
 
 
 
@@ -60,6 +54,7 @@
       box-shadow: 10px 10px 1px #FF90E8;
       border-radius: 80px;
       margin-left: 30rem;
+      margin-bottom: 20rem;
 
 }
 

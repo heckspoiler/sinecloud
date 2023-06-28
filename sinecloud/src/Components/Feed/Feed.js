@@ -21,16 +21,14 @@ const Feed = () => {
         return response.json();
       })
       .then((data) => {
-        console.log(data); // print the raw data
+        console.log(data);
         setUsersData(data.message);
       })
       .catch((error) => {
         console.error(error);
-        // Handle error case
       });
   }, []);
-
-  console.log(usersData); // log to see the data structure
+  console.log(typeof usersData[0]?.user);
 
   return (
     <div className="feed">
@@ -44,14 +42,13 @@ const Feed = () => {
             <p key={index}>{user.tracks.title}</p>
           ))}
       </h1>
-      <img src={kioskradio} className="radio-station-img" />
+      <img src={usersData.username} className="radio-station-img" />
 
       <section className="feed-container">
         {usersData.map((user) =>
           user.tracks.map((track, trackIndex) => (
             <div className="feed-player-container" key={trackIndex}>
               <ReactPlayer url={track.url} className="react-player" />
-              <img src={user.user} alt={user.user} />
             </div>
           ))
         )}
