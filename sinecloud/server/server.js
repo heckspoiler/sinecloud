@@ -18,7 +18,7 @@ app.get("/api/soundcloud", async (req, res) => {
 
   const profileURLs = [
     "kioskradio",
-    "trnstnradio",
+    // "trnstnradio",
     // "thelotradio",
     // "nts-latest",
     // "faultradio",

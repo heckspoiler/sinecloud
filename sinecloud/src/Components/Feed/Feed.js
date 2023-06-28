@@ -8,7 +8,6 @@ import thelotradio from "../Home/SecondSection/Logos/radio-stations/the-lot-radi
 import trnstnradio from "../Home/SecondSection/Logos/radio-stations/trnstn-radio.png";
 
 const Feed = () => {
-  const [users, setUsers] = useState(null);
   const [tracks, setTracks] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isLoadingComplete, setIsLoadingComplete] = useState(false);
@@ -38,25 +37,24 @@ const Feed = () => {
       <h1>
         Feed me <br />
         new music
-        {usersData &&
-          usersData.map((user, index) => <p key={index}>{user.user}</p>)}
       </h1>
+      <h1 className="track-title-display">
+        {usersData &&
+          usersData.map((user, index) => (
+            <p key={index}>{user.tracks.title}</p>
+          ))}
+      </h1>
+      <img src={kioskradio} className="radio-station-img" />
+
       <section className="feed-container">
-        {!isLoading &&
-          tracks.map((track) => {
-            return (
-              <div
-                className="feed-player-container"
-                key={usersData.tracks.title}
-              >
-                <ReactPlayer
-                  url={usersData.tracks.url}
-                  className="react-player"
-                />
-                <img src={usersData.username} alt={usersData.username} />
-              </div>
-            );
-          })}
+        {usersData.map((user) =>
+          user.tracks.map((track, trackIndex) => (
+            <div className="feed-player-container" key={trackIndex}>
+              <ReactPlayer url={track.url} className="react-player" />
+              <img src={user.user} alt={user.user} />
+            </div>
+          ))
+        )}
       </section>
     </div>
   );

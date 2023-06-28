@@ -14,7 +14,7 @@
       font-style: italic;
       mix-blend-mode: screen;
       width: 40%;
-      letter-spacing: -5px;
+      letter-spacing: -3px;
       font-size: 6rem;
 }
 
@@ -22,6 +22,15 @@
       font-size: 5rem;
 
 }
+
+.track-title-display {
+      margin-top: 20rem;
+      font-size: 3rem !important;
+      letter-spacing: -1px !important;
+      color: #FF90E8;
+      line-height: 3.3rem;
+}
+
 
 .feed-container {
       display: grid;
@@ -50,18 +59,14 @@
       width: 80%;
       box-shadow: 10px 10px 1px #FF90E8;
       border-radius: 80px;
-      align-self: center;
+      margin-left: 30rem;
 
 }
 
-.loading-container {
-      height: 100vh;
-      width: 100vw;
-      top: 0;
-      left: 0;
-      position: absolute;
-      z-index: 13;
-      display: flex;
-      flex-direction: row;
-
+.radio-station-img {
+      height: 10rem;
+      width: 10rem;
+      margin-left: 15%;
+      position: fixed;
+      margin-top: 20rem;
 }
