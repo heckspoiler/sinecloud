@@ -52,7 +52,6 @@ const Feed = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setCurrentRadioStation(entry.target.dataset.user); // Get user from data attribute and update state
-            console.log("Element is visible", entry.target.className);
           }
         });
       },
@@ -73,8 +72,6 @@ const Feed = () => {
       });
     };
   }, [usersData]);
-
-  console.log("i would like to display", getLogoByUser(currentRadioStation));
 
   return (
     <div className="feed">

@@ -13,8 +13,8 @@ app.use(
   })
 );
 
-let dataCache = null; // Store the fetched data
-let isFetching = false; // Flag variable to control fetching behavior
+let dataCache = null;
+let isFetching = false;
 
 const fetchData = async () => {
   try {
@@ -53,7 +53,6 @@ const fetchData = async () => {
     }));
 
     dataCache = arr; // Update the data cache
-
     console.log("Data fetched:", arr);
   } catch (error) {
     console.error(error);
