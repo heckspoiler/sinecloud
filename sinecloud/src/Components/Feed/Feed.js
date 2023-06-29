@@ -29,7 +29,7 @@ const Feed = () => {
   const [currentRadioStation, setCurrentRadioStation] = useState("");
   const [offset, setOffset] = useState(0);
   const elementsRef = useRef([]);
-  const limit = 5;
+  const limit = 1;
   const lastTrackRef = useRef();
 
   const fetchTracks = () => {
