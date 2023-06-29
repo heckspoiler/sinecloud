@@ -21,9 +21,9 @@ const fetchData = async () => {
     const profileURLs = [
       "kioskradio",
       "trnstnradio",
-      // "thelotradio",
-      // "nts-latest",
-      // "faultradio",
+      "thelotradio",
+      "nts-latest",
+      "faultradio",
     ];
 
     const responses = await Promise.all(
@@ -47,17 +47,19 @@ const fetchData = async () => {
       )
     );
 
-    const arr = responses.map((data) => ({
-      user: data.username,
-      tracks: data.tracks,
-    }));
+    const arr = responses.flatMap((data) =>
+      data.tracks.map((track) => ({
+        user: data.username,
+        track,
+      }))
+    );
 
-    dataCache = arr; // Update the data cache
-    console.log("Data fetched:", arr);
+    dataCache = arr;
+    // console.log("Data fetched:", arr);
   } catch (error) {
     console.error(error);
   } finally {
-    isFetching = false; // Reset the flag after fetching is completed
+    isFetching = false;
   }
 };
 
@@ -72,9 +74,13 @@ setInterval(() => {
 }, fetchInterval);
 
 app.get("/api/soundcloud", (req, res) => {
+  const offset = parseInt(req.query.offset) || 0;
+  const limit = parseInt(req.query.limit) || 5;
+
   if (dataCache) {
+    const paginatedData = dataCache.slice(offset, offset + limit);
     res.json({
-      message: dataCache,
+      message: paginatedData,
     });
   } else {
     res.status(500).json({ error: "No data available" });

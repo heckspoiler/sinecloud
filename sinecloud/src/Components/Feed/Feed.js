@@ -27,10 +27,15 @@ const getLogoByUser = (user) => {
 const Feed = () => {
   const [usersData, setUsersData] = useState([]);
   const [currentRadioStation, setCurrentRadioStation] = useState("");
+  const [offset, setOffset] = useState(0);
   const elementsRef = useRef([]);
+  const limit = 5;
+  const lastTrackRef = useRef();
 
-  useEffect(() => {
-    fetch("http://localhost:4000/api/soundcloud")
+  const fetchTracks = () => {
+    fetch(
+      `http://localhost:4000/api/soundcloud?offset=${offset}&limit=${limit}`
+    )
       .then((response) => {
         if (!response.ok)
           throw new Error("Request failed with status " + response.status);
@@ -38,20 +43,24 @@ const Feed = () => {
       })
       .then((data) => {
         console.log(data);
-        setUsersData(data.message);
+        setUsersData((oldData) => [...oldData, ...data.message]);
+        setOffset((oldOffset) => oldOffset + limit);
       })
       .catch((error) => {
         console.error(error);
       });
+  };
+
+  useEffect(() => {
+    fetchTracks();
   }, []);
-  console.log(usersData[0]?.user);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setCurrentRadioStation(entry.target.dataset.user); // Get user from data attribute and update state
+            setCurrentRadioStation(entry.target.dataset.user);
           }
         });
       },
@@ -73,6 +82,29 @@ const Feed = () => {
     };
   }, [usersData]);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            fetchTracks(); // Fetch more tracks when last track is in view
+          }
+        });
+      },
+      { threshold: 1 } // trigger when last track is fully in view
+    );
+
+    if (lastTrackRef.current) {
+      observer.observe(lastTrackRef.current);
+    }
+
+    return () => {
+      if (lastTrackRef.current) {
+        observer.unobserve(lastTrackRef.current);
+      }
+    };
+  }, [usersData]);
+
   return (
     <div className="feed">
       <h1>
@@ -90,18 +122,22 @@ const Feed = () => {
         )}
       </div>
 
-      {usersData.map((user, index) =>
-        user.tracks.map((track, trackIndex) => (
+      {usersData.map((data, index) => {
+        const isLastItem = index === usersData.length - 1;
+        return (
           <div
             className="feed-player-container"
-            data-user={user.user}
-            ref={(element) => elementsRef.current.push(element)}
-            key={trackIndex}
+            data-user={data.user}
+            ref={(element) => {
+              elementsRef.current.push(element);
+              if (isLastItem) lastTrackRef.current = element;
+            }}
+            key={index}
           >
-            <ReactPlayer url={track.url} className="react-player" />
+            <ReactPlayer url={data.track.url} className="react-player" />
           </div>
-        ))
-      )}
+        );
+      })}
     </div>
   );
 };
