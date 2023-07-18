@@ -31,8 +31,12 @@ const Feed = () => {
   const elementsRef = useRef([]);
   const limit = 5;
   const lastTrackRef = useRef();
+  const [isFetchingData, setIsFetchingData] = useState(false);
 
   const fetchTracks = () => {
+    if (isFetchingData) return;
+    setIsFetchingData(true);
+
     fetch(
       `http://localhost:4000/api/soundcloud?offset=${offset}&limit=${limit}`
     )
@@ -43,11 +47,18 @@ const Feed = () => {
       })
       .then((data) => {
         console.log(data);
-        setUsersData((oldData) => [...oldData, ...data.message]);
+        setUsersData((oldData) => {
+          const newData = data.message.filter(
+            (item) => !oldData.some((oldItem) => oldItem.track.id === item.track.id)
+          );
+          return [...oldData, ...newData];
+        });
         setOffset((oldOffset) => oldOffset + limit);
+        setIsFetchingData(false); // Allow the next fetch when the current one is completed
       })
       .catch((error) => {
         console.error(error);
+        setIsFetchingData(false); // Make sure to reset the flag even if there's an error
       });
   };
 
