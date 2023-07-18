@@ -26,7 +26,14 @@
       background-color: #1200FF;
       background-image: linear-gradient(rgba(134, 138, 246, .3) .1em, transparent .08rem), linear-gradient(90deg, rgba(134, 138, 246, .3) .08rem, transparent .1em);
       background-size: 2vw 2vw;
+      transition: border-color 0.2s ease-in, transform 0.2s ease-in;
 
+}
+
+.stations_radio-image:hover {
+      border-color: #ff90e8;
+      transform: translateY(-2%);
+      cursor: pointer;
 }
 
 .stations_logo-container {

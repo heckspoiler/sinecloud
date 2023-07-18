@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { Home } from "./Components/Home/Home";
 import { Navbar } from "./Components/Navbar/Navbar";
 import { Stations } from "./Components/Stations/Stations";
+import { About } from "./Components/About/About";
 const Feed = lazy(() => import("./Components/Feed/Feed"));
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
               </Suspense>
             }
           />
+          <Route path="/about" element={<About />} />
         </Routes>
       </div>
     </Router>
