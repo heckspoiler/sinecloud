@@ -13,21 +13,28 @@ export const Station = () => {
 
       <h3>Brussels, Belgium</h3>
       <section className="stations_logo-container">
-        <img
-          src={web}
-          alt="globe-logo-web"
-          className="stations_social-svg social-svg-web"
-        ></img>
-        <img
-          src={instagram}
-          alt="globe-logo-web"
-          className="stations_social-svg social-svg-instagram"
-        ></img>
-        <img
-          src={soundcloud}
-          alt="globe-logo-web"
-          className="stations_social-svg social-svg-soundcloud"
-        ></img>
+        <a href="#">
+          {" "}
+          <img
+            src={web}
+            alt="globe-logo-web"
+            className="stations_social-svg social-svg-web"
+          ></img>
+        </a>
+        <a href="#">
+          <img
+            src={instagram}
+            alt="globe-logo-web"
+            className="stations_social-svg social-svg-instagram"
+          ></img>
+        </a>
+        <a href="#">
+          <img
+            src={soundcloud}
+            alt="globe-logo-web"
+            className="stations_social-svg social-svg-soundcloud"
+          ></img>
+        </a>
       </section>
     </div>
   );

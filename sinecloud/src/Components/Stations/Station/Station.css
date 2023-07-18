@@ -1,10 +1,17 @@
 .stations_radio-station {
       display: flex;
+      padding: 20px;
       flex-direction: column;
       gap: 0.9rem;
       width: 100%;
       justify-content: center;
       align-items: center;
+      background-color: #1200FF;
+
+      /* background-image: linear-gradient(rgba(134, 138, 246, .3) .1em, transparent .08rem), linear-gradient(90deg, rgba(134, 138, 246, .3) .08rem, transparent .1em); */
+      background-size: 1vw 1vw;
+      box-shadow: 4px 4px 1px #FF90E8;
+      border-radius: 20px;
 }
 
 
@@ -12,13 +19,12 @@
 .stations_radio-station h2 {
       font-family: "Nohemi Medium";
       font-size: 1.6rem;
-
-      text-shadow: 1px 1px 1px #FF90E8;
+      text-shadow: 1px 1px 1px #140923;
 }
 
 .stations_radio-station h3 {
       color: white;
-      font-weight: 300;
+      font-weight: 500;
       font-size: 0.9rem;
       font-style: italic;
 }
@@ -26,12 +32,15 @@
 .stations_radio-image {
       height: calc(1.2rem + 8vw);
       width: calc(1.2rem + 8vw);
-      border: 4px dotted pink;
-
+      border: 2px solid white;
+      /* border-bottom: 2px solid white;
+      border-top: 2px solid #FF90E8;
+      border-left: 2px solid #FF90E8; */
       border-radius: 50%;
       padding: 10px;
-      background-image: linear-gradient(rgba(134, 138, 246, .3) .1em, transparent .08rem), linear-gradient(90deg, rgba(134, 138, 246, .3) .08rem, transparent .1em);
-      background-size: 1vw 1vw;
+      /* background-color: #1200FF; */
+      box-shadow: inset 4px 4px 1px white;
+
 
 }
 
@@ -39,10 +48,9 @@
       display: flex;
       justify-content: center;
       gap: calc(0.1rem + 2vw);
-      border: 1px dashed white;
+      border: 2px dashed white;
       padding: 10px;
       border-radius: 30px;
-      background-color: #FF90E8;
       width: calc(2rem + 10vw);
       min-width: 8rem;
 
