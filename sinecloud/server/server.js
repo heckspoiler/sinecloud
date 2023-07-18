@@ -54,8 +54,11 @@ const fetchData = async () => {
       }))
     );
 
+    shuffleArray(arr); // shuffle array
+
     dataCache = arr;
-    // console.log("Data fetched:", arr);
+    console.log("Data fetched:", arr);
+    console.log("Data cache:", dataCache);
   } catch (error) {
     console.error(error);
   } finally {
@@ -73,9 +76,17 @@ setInterval(() => {
   }
 }, fetchInterval);
 
+// shuffle array function
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
 app.get("/api/soundcloud", (req, res) => {
   const offset = parseInt(req.query.offset) || 0;
-  const limit = parseInt(req.query.limit) || 5;
+  const limit = parseInt(req.query.limit) || 10;
 
   if (dataCache) {
     const paginatedData = dataCache.slice(offset, offset + limit);

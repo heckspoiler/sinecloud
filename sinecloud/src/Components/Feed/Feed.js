@@ -29,7 +29,7 @@ const Feed = () => {
   const [currentRadioStation, setCurrentRadioStation] = useState("");
   const [offset, setOffset] = useState(0);
   const elementsRef = useRef([]);
-  const limit = 1;
+  const limit = 5;
   const lastTrackRef = useRef();
 
   const fetchTracks = () => {
@@ -91,7 +91,7 @@ const Feed = () => {
           }
         });
       },
-      { threshold: 1 } // trigger when last track is fully in view
+      { threshold: 0.2 } // trigger when last track is fully in view
     );
 
     if (lastTrackRef.current) {
