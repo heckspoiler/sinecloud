@@ -5,30 +5,27 @@ import web from "./Logos/web/globe.svg";
 import instagram from "./Logos/web/instagram.svg";
 import soundcloud from "./Logos/web/soundcloud.svg";
 
-export const Station = () => {
+export const Station = (props) => {
   return (
     <div className="stations_radio-station">
-      <h2>Kiosk Radio</h2>
-      <img src={kioskradio} className="stations_radio-image"></img>
+      <img src={props.logo} className="stations_radio-image"></img>
 
-      <h3>Brussels, Belgium</h3>
       <section className="stations_logo-container">
-        <a href="#">
-          {" "}
+        <a href={props.url} className="stations_img-anchor" target="_blank">
           <img
-            src={web}
+            src={props.logo}
             alt="globe-logo-web"
             className="stations_social-svg social-svg-web"
-          ></img>
+          />
         </a>
-        <a href="#">
+        <a href={props.instagram} target="_blank">
           <img
             src={instagram}
             alt="globe-logo-web"
             className="stations_social-svg social-svg-instagram"
           ></img>
         </a>
-        <a href="#">
+        <a href={props.soundcloud} target="_blank">
           <img
             src={soundcloud}
             alt="globe-logo-web"

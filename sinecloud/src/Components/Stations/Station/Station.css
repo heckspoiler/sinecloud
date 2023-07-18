@@ -1,22 +1,12 @@
 .stations_radio-station {
       display: flex;
-      padding: 30px;
+      padding: 25px;
       flex-direction: column;
-      gap: 1.2rem;
+      gap: 2rem;
       justify-content: center;
       align-items: center;
-      background-color: #1200FF;
-      border: 1px solid white;
-      /* background-image: linear-gradient(rgba(255, 255, 255, 0.3) .1em, transparent .08rem), linear-gradient(90deg, rgba(255, 255, 255, 0.3) .08rem, transparent .1em); */
-      background-size: 1vw 1vw;
-}
 
 
-
-.stations_radio-station h2 {
-      font-family: "Nohemi Bold";
-      font-size: 1.6rem;
-      text-shadow: 1px 1px 1px #140923;
 }
 
 .stations_radio-station h3 {
@@ -28,17 +18,14 @@
 }
 
 .stations_radio-image {
-      height: calc(1.2rem + 8vw);
-      width: calc(1.2rem + 8vw);
-      /* border: 1px solid white; */
-      /* border-bottom: 2px solid white;
-      border-top: 2px solid #FF90E8;
-      border-left: 2px solid #FF90E8; */
-      border-radius: 10%;
-      padding: 10px;
+      height: calc(1.2rem + 14vw);
+      width: calc(1.2rem + 14vw);
+      border-radius: 50%;
+      padding: 20px;
+      border: 7px solid white;
       background-color: #1200FF;
-      box-shadow: 1px 1px 20px rgb(12, 144, 221);
-
+      background-image: linear-gradient(rgba(134, 138, 246, .3) .1em, transparent .08rem), linear-gradient(90deg, rgba(134, 138, 246, .3) .08rem, transparent .1em);
+      background-size: 2vw 2vw;
 
 }
 
@@ -46,17 +33,18 @@
       display: flex;
       justify-content: center;
       gap: calc(0.1rem + 2vw);
-      border: 2px dashed white;
+      border: 2px solid white;
       padding: 10px;
       border-radius: 30px;
-      width: calc(2rem + 10vw);
+      width: calc(4rem + 10vw);
       min-width: 8rem;
       background-color: #1200FF;
-
+      box-shadow: 1px 1px 13px #0600c0;
 
 }
 
 .stations_social-svg {
-      height: 1.5rem;
-      width: 1.5rem;
+      height: 2rem;
+      width: 2rem;
+
 }

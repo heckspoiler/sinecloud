@@ -5,11 +5,8 @@
       grid-template-columns: 1fr 1fr 1fr;
       justify-content: center;
       align-items: center;
-      row-gap: calc(4rem + 8vw);
-      /* Vertical gap */
+      row-gap: calc(1rem + 8vw);
       column-gap: calc(0.8rem + 5vw);
-      /* Horizontal gap */
-
       padding: calc(4rem + 8vw) 6rem calc(4rem + 8vw) 6rem;
 
 }

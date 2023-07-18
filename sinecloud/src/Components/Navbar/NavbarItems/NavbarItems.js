@@ -21,6 +21,12 @@ export const NavbarItems = () => {
           Feed
         </Link>
       </li>
+
+      <li>
+        <Link to="/about" className="navbar-link">
+          About
+        </Link>
+      </li>
     </ul>
   );
 };
