@@ -7,11 +7,10 @@
       align-items: center;
       row-gap: calc(4rem + 8vw);
       /* Vertical gap */
-      column-gap: calc(2rem + 8vw);
+      column-gap: calc(0.8rem + 5vw);
       /* Horizontal gap */
 
-      padding: calc(4rem + 8vw) 6rem 0 6rem;
-
+      padding: calc(4rem + 8vw) 6rem calc(4rem + 8vw) 6rem;
 
 }
 
