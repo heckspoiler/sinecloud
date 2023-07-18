@@ -42,8 +42,8 @@
       mix-blend-mode: screen;
       width: 40%;
       letter-spacing: -3px;
-      font-size: 6rem;
-      text-shadow: 4px 1px 1px #FF90E8 !important;
+      font-size: 4rem;
+      text-shadow: 3px 1px 1px #FF90E8 !important;
 }
 
 .feed-title {

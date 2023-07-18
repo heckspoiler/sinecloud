@@ -1,0 +1,55 @@
+.stations_radio-station {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+}
+
+
+
+.stations_radio-station h2 {
+      font-family: "Nohemi Medium";
+      font-size: 1.6rem;
+
+      text-shadow: 1px 1px 1px #FF90E8;
+}
+
+.stations_radio-station h3 {
+      color: white;
+      font-weight: 300;
+      font-size: 0.9rem;
+      font-style: italic;
+}
+
+.stations_radio-image {
+      height: calc(1.2rem + 8vw);
+      width: calc(1.2rem + 8vw);
+      border: 4px dotted pink;
+
+      border-radius: 50%;
+      padding: 10px;
+      background-image: linear-gradient(rgba(134, 138, 246, .3) .1em, transparent .08rem), linear-gradient(90deg, rgba(134, 138, 246, .3) .08rem, transparent .1em);
+      background-size: 1vw 1vw;
+
+}
+
+.stations_logo-container {
+      display: flex;
+      justify-content: center;
+      gap: calc(0.1rem + 2vw);
+      border: 1px dashed white;
+      padding: 10px;
+      border-radius: 30px;
+      background-color: #FF90E8;
+      width: calc(2rem + 10vw);
+      min-width: 8rem;
+
+
+}
+
+.stations_social-svg {
+      height: 1.5rem;
+      width: 1.5rem;
+}

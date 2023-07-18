@@ -7,6 +7,11 @@ export const Stations = () => {
     <div className="stations-container">
       <h1>We love these stations!</h1>
       <Station />
+      <Station />
+      <Station />
+      <Station />
+      <Station />
+      <Station />
     </div>
   );
 };
