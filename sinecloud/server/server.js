@@ -54,11 +54,28 @@ const fetchData = async () => {
       }))
     );
 
+    // function findDuplicates(array, property) {
+    //   const duplicates = [];
+    //   const values = new Set();
+
+    //   for (let i = 0; i < array.length; i++) {
+    //     const value = array[i][property];
+    //     if (values.has(value)) {
+    //       duplicates.push(array[i][property]);
+    //     }
+    //     values.add(value);
+    //   }
+
+    //   console.log(duplicates);
+    // }
+    // console.log("array: ", arr[0].track.title);
+    // findDuplicates(arr, "track.title");
+
     shuffleArray(arr); // shuffle array
 
     dataCache = arr;
-    console.log("Data fetched:", arr);
-    console.log("Data cache:", dataCache);
+    // console.log("Data fetched:", arr.length);
+    // console.log("Data cache:", dataCache.length);
   } catch (error) {
     console.error(error);
   } finally {

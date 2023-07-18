@@ -91,7 +91,7 @@ const Feed = () => {
           }
         });
       },
-      { threshold: 0.2 } // trigger when last track is fully in view
+      { threshold: 0.5 }
     );
 
     if (lastTrackRef.current) {

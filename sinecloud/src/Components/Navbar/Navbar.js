@@ -8,7 +8,8 @@ export const Navbar = () => {
   return (
     <nav className="navbar">
       <NavbarItems />
-      <SearchBar />
+      {/* <SearchBar /> */}
+
       <LoginSection />
     </nav>
   );
