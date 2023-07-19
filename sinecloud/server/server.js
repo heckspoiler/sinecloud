@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const fetch = require("node-fetch");
@@ -35,9 +36,8 @@ const fetchData = async () => {
           {
             method: "GET",
             headers: {
-              "X-RapidAPI-Key":
-                "439b27de4amshb8504f8f9c5e92ap1c69f7jsn6ee0a06dd329",
-              "X-RapidAPI-Host": "soundcloud4.p.rapidapi.com",
+              "X-RapidAPI-Key": process.env.RAPIDAPI_KEY,
+              "X-RapidAPI-Host": process.env.RAPIDAPI_HOST,
             },
           }
         ).then((response) => {
