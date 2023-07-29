@@ -54,8 +54,14 @@ export const ThirdSection = () => {
         className="learn-more-button"
         style={{ opacity: 0 }}
         animate={buttonAnimation}
+        onClick={() =>
+          window.open(
+            "https://discord.com/channels/1134403419503865856/1134404686611496981",
+            "_blank"
+          )
+        }
       >
-        Learn more here!
+        Join our discord!
       </m.button>
       <img src={cloud} className="section-three-cloud" alt="cloud" />
     </section>

@@ -1,4 +1,4 @@
-require("dotenv").config();
+require("dotenv").config({ path: "./key.env" });
 const express = require("express");
 const cors = require("cors");
 const fetch = require("node-fetch");
@@ -54,28 +54,15 @@ const fetchData = async () => {
       }))
     );
 
-    // function findDuplicates(array, property) {
-    //   const duplicates = [];
-    //   const values = new Set();
+    // Shuffle the array
 
-    //   for (let i = 0; i < array.length; i++) {
-    //     const value = array[i][property];
-    //     if (values.has(value)) {
-    //       duplicates.push(array[i][property]);
-    //     }
-    //     values.add(value);
-    //   }
+    shuffleArray(arr);
 
-    //   console.log(duplicates);
-    // }
-    // console.log("array: ", arr[0].track.title);
-    // findDuplicates(arr, "track.title");
+    // slice the data cache to 500 items
 
-    shuffleArray(arr); // shuffle array
+    dataCache = arr.slice(0, 500);
 
-    dataCache = arr;
-    // console.log("Data fetched:", arr.length);
-    // console.log("Data cache:", dataCache.length);
+    console.log("Data cache:", dataCache.length);
   } catch (error) {
     console.error(error);
   } finally {
@@ -100,6 +87,8 @@ function shuffleArray(array) {
     [array[i], array[j]] = [array[j], array[i]];
   }
 }
+
+// Get the data from the cache
 
 app.get("/api/soundcloud", (req, res) => {
   const offset = parseInt(req.query.offset) || 0;

@@ -28,11 +28,17 @@ const Feed = () => {
   const [usersData, setUsersData] = useState([]);
   const [currentRadioStation, setCurrentRadioStation] = useState("");
   const [offset, setOffset] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
   const elementsRef = useRef([]);
   const limit = 5;
   const lastTrackRef = useRef();
 
   const fetchTracks = () => {
+    if (isLoading) {
+      return;
+    }
+
+    setIsLoading(true);
     fetch(
       `http://localhost:4000/api/soundcloud?offset=${offset}&limit=${limit}`
     )
@@ -45,9 +51,11 @@ const Feed = () => {
         console.log(data);
         setUsersData((oldData) => [...oldData, ...data.message]);
         setOffset((oldOffset) => oldOffset + limit);
+        setIsLoading(false);
       })
       .catch((error) => {
         console.error(error);
+        setIsLoading(false);
       });
   };
 
@@ -86,12 +94,12 @@ const Feed = () => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          if (entry.isIntersecting && !isLoading) {
             fetchTracks(); // Fetch more tracks when last track is in view
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.2 }
     );
 
     if (lastTrackRef.current) {
@@ -103,7 +111,7 @@ const Feed = () => {
         observer.unobserve(lastTrackRef.current);
       }
     };
-  }, [usersData]);
+  }, [usersData, isLoading]);
 
   return (
     <div className="feed">
