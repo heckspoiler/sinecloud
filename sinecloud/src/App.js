@@ -32,18 +32,11 @@ function App() {
       <div className="App">
         <Navbar />
         <Routes>
-          <Route path="/feed/:stationName" component={Feed} />
           <Route path="/" element={<Home />} />
           <Route path="/stations" element={<Stations />} />
-          <Route
-            path="/feed"
-            element={
-              <Suspense fallback={<div>Loading...</div>}>
-                <Feed />
-              </Suspense>
-            }
-          />
           <Route path="/about" element={<About />} />
+          <Route path="/feed/:stationName" component={Feed} />
+          <Route path="/feed" element={<Feed />} />
         </Routes>
       </div>
     </Router>
