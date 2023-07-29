@@ -1,7 +1,5 @@
 import React from "react";
 import "./Station.css";
-import kioskradio from "./Logos/radio-stations/kiosk-radio.png";
-import web from "./Logos/web/globe.svg";
 import instagram from "./Logos/web/instagram.svg";
 import soundcloud from "./Logos/web/soundcloud.svg";
 
