@@ -32,6 +32,7 @@ function App() {
       <div className="App">
         <Navbar />
         <Routes>
+          <Route path="/feed/:stationName" component={Feed} />
           <Route path="/" element={<Home />} />
           <Route path="/stations" element={<Stations />} />
           <Route

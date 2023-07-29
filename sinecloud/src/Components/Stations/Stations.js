@@ -52,6 +52,7 @@ export const Stations = () => {
       <h1>We love these stations!</h1>
       {stations.map((station) => (
         <Station
+          name={station.name}
           key={station.name}
           logo={station.logo}
           url={station.url}
