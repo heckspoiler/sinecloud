@@ -6,7 +6,6 @@ import kioskradio from "../Home/SecondSection/Logos/radio-stations/kiosk-radio.p
 import nts from "../Home/SecondSection/Logos/radio-stations/nts.png";
 import thelotradio from "../Home/SecondSection/Logos/radio-stations/the-lot-radio.png";
 import trnstnradio from "../Home/SecondSection/Logos/radio-stations/trnstn-radio.png";
-import { useParams } from "react-router-dom";
 
 const getLogoByUser = (user) => {
   switch (user) {
@@ -33,17 +32,15 @@ const Feed = () => {
   const elementsRef = useRef([]);
   const limit = 5;
   const lastTrackRef = useRef();
-  const { stationName } = useParams();
-  const decodedStationName = decodeURIComponent(stationName);
 
-  const fetchTracks = (stationName) => {
+  const fetchTracks = () => {
     if (isLoading) {
       return;
     }
 
     setIsLoading(true);
     fetch(
-      `http://localhost:4000/api/soundcloud?station=${stationName}&offset=${offset}&limit=${limit}`
+      `http://localhost:4000/api/soundcloud?offset=${offset}&limit=${limit}`
     )
       .then((response) => {
         if (!response.ok)
@@ -63,12 +60,8 @@ const Feed = () => {
   };
 
   useEffect(() => {
-    if (decodedStationName === "all") {
-      fetchTracks(); // fetch all tracks
-    } else {
-      fetchTracks(decodedStationName); // fetch tracks for specific station
-    }
-  }, [decodedStationName]);
+    fetchTracks();
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -102,7 +95,7 @@ const Feed = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting && !isLoading) {
-            fetchTracks(decodedStationName);
+            fetchTracks(); // Fetch more tracks when last track is in view
           }
         });
       },
@@ -118,7 +111,7 @@ const Feed = () => {
         observer.unobserve(lastTrackRef.current);
       }
     };
-  }, [usersData, isLoading, decodedStationName]);
+  }, [usersData, isLoading]);
 
   return (
     <div className="feed">
