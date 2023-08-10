@@ -153,3 +153,144 @@ button.close-button:hover {
 
 
 }
+
+
+@media screen and (max-width: 414px) {
+
+      .login-section {
+            height: 20%;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+      }
+
+      .login-section button {
+            height: 100%;
+            width: 100%;
+            border: none;
+            font-family: "Nohemi Medium";
+            font-size: 1.4rem;
+      }
+
+      .login-button {
+            background-color: #FF90E8;
+            border-right: none !important;
+            transition: all 0.2s ease-in-out;
+            font-size: 2rem;
+            border-top: 1.5px solid black !important;
+            border-bottom: 1.5px solid black !important;
+      }
+
+      .login-button::before {
+            content: "";
+            position: absolute;
+            display: block;
+            height: 5px;
+            width: 0;
+            background-color: black;
+            transition: width 0.3s ease-in-out;
+            margin-top: 35px !important;
+
+      }
+
+      .login-button:hover::before {
+            width: 20%;
+      }
+
+      .signup-button {
+            background-color: #fff;
+            transition: all 0.2s ease-in-out;
+            font-size: 2rem;
+
+
+      }
+
+      .signup-button:hover {
+            background-color: #90CCED;
+            font-size: 1.02rem;
+
+
+      }
+
+
+      /* login popup field */
+
+      .login-popup {
+            position: absolute;
+            height: 20rem;
+            width: 20rem;
+            top: 4.6rem;
+            right: -55%;
+            scale: 1;
+            margin-top: 40vh;
+            transition: scale 1s ease-out;
+
+
+      }
+
+      .login-popup-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            height: 100%;
+            overflow: hidden;
+            width: 100%;
+            background-color: #fff !important;
+            border: 1.5px solid black;
+
+
+      }
+
+
+
+      .login-popup ul {
+
+            background-color: #fff !important;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            height: 50%;
+            width: 100%;
+
+      }
+
+      .login-popup ul li {
+            list-style: none;
+            width: 60%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+      }
+
+      .login-popup ul li input {
+            height: 2rem;
+            width: 100%;
+            border: 1px solid black;
+            font-size: 0.8rem;
+            padding-left: 10px;
+            font-family: "Nohemi Medium";
+
+      }
+
+      .login-popup-content button {
+            height: 2rem;
+            width: 6rem;
+            border: 1px solid black;
+            font-size: 0.8rem;
+            background-color: #FF90E8;
+      }
+
+      button.close-button {
+            border: none;
+            background-color: transparent;
+            transition: color 0.1s ease;
+      }
+
+
+}

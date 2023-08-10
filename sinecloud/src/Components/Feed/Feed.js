@@ -116,7 +116,7 @@ const Feed = () => {
   return (
     <div className="feed">
       <h1>
-        Feed me <br />
+        Feed me <br className="break-title" />
         new music
       </h1>
       <div className="rotate-div"></div>

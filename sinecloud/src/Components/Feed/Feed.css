@@ -211,3 +211,58 @@
 
 
 }
+
+@media screen and (max-width: 414px) {
+      .feed h1 {
+            position: fixed;
+            margin-top: calc(20px + 10vh);
+            margin-left: calc(20px + 2vw);
+            top: 0;
+            left: 0;
+            font-style: italic;
+            mix-blend-mode: screen;
+            width: 100%;
+            letter-spacing: 0;
+            font-size: 2rem;
+
+      }
+
+      .break-title {
+            display: none;
+      }
+
+
+      .radio-station-img {
+            display: none;
+
+      }
+
+      .img-container {
+            display: none;
+      }
+
+      .rotate-div {
+            display: none;
+      }
+
+      .feed-player-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+            margin-top: 4rem;
+
+      }
+
+      .react-player {
+            width: 80vw !important;
+            height: 20rem !important;
+            box-shadow: 5px 5px 1px #FF90E8;
+            border-radius: 80px;
+            margin-top: 5rem;
+            margin-left: 25vw;
+
+      }
+
+
+}
