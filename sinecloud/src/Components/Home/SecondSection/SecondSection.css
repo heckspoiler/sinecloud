@@ -141,3 +141,60 @@ h2 {
 
 
 }
+
+@media screen and (max-width: 414px) {
+
+      .second-section h2,
+      h2 {
+            font-family: "Chopper";
+            font-size: 20px;
+            color: #ececec;
+            margin-left: 2rem;
+
+      }
+
+      .second-section {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-top: 0;
+      }
+
+
+
+      .second-title {
+            opacity: 0;
+      }
+
+
+
+      .second-section_block {
+            height: 1rem;
+            background-color: #90CBED;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            width: calc(11rem + 9vw);
+            border: 1px solid black;
+            margin-top: 10px;
+            margin-left: 5rem;
+
+      }
+
+      .text-section {
+            margin-top: 2rem;
+            opacity: 0;
+      }
+
+      .text-section p {
+            font-size: 0.8rem;
+
+      }
+
+      .second-section-title {
+
+            margin-left: -4rem;
+      }
+}

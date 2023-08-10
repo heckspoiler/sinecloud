@@ -63,6 +63,25 @@
             height: 70%;
       }
 
+}
+
+@media screen and (max-width: 414px) {
+
+      .radio-img {
+            scale: 0.3;
+            opacity: 0;
+      }
+
+      .logos-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: normal;
+            justify-content: space-around;
+            height: 70%;
+            gap: 0 !important;
+
+      }
+
 
 
 }
