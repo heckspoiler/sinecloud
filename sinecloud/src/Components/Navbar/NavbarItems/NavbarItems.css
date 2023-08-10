@@ -69,3 +69,26 @@ ul.navbar-items {
 
 
 }
+
+
+@media screen and (max-width: 720px) {
+
+      ul.navbar-items {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            list-style: none;
+            height: 100%;
+            padding-right: 20px;
+            gap: calc(1rem + 0.5vw);
+            padding-left: 40px;
+            font-size: 0.8rem;
+      }
+
+      .navbar-link:hover::before {
+            width: 2%;
+            margin-top: 14px;
+      }
+
+
+}

@@ -1,6 +1,6 @@
 .stations-container {
-      height: 100vh;
-      width: 100%;
+      height: 100100%;
+      width: 100vw;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       justify-content: center;
@@ -22,4 +22,34 @@
       letter-spacing: -3px;
       font-size: 4rem;
       color: white;
+}
+
+@media screen and (max-width: 720px) {
+
+
+      .stations-container {
+            height: 100vh;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            justify-content: center;
+            align-items: center;
+            row-gap: calc(1rem + 8vw);
+            column-gap: calc(0.8rem + 5vw);
+            padding: calc(4rem + 8vw) 6rem calc(4rem + 8vw) 6rem;
+
+      }
+
+      .stations-container h1 {
+            position: fixed;
+            margin-top: calc(20px + 10vh);
+            margin-left: calc(20px + 2vw);
+            top: 0;
+            left: 0;
+            font-style: italic;
+            width: 80%;
+            letter-spacing: -3px;
+            font-size: 3rem;
+            color: white;
+      }
 }

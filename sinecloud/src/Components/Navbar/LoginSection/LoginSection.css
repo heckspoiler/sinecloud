@@ -132,3 +132,24 @@ button.close-button {
 button.close-button:hover {
       color: rgb(209, 27, 27);
 }
+
+
+
+@media screen and (max-width: 720px) {
+
+
+      .login-section button {
+
+            font-size: 0.8rem;
+      }
+
+      .login-button::before {
+            width: 2%;
+            margin-top: 14px;
+            margin-left: 3.9rem;
+
+      }
+
+
+
+}
