@@ -1,7 +1,7 @@
 .hamburger {
       height: 30px;
       width: 35px;
-      position: absolute;
+      position: fixed;
       justify-content: space-evenly;
       align-items: center;
       gap: 2px;
