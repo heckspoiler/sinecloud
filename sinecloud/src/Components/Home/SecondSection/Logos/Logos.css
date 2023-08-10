@@ -49,3 +49,13 @@
 
 
 }
+
+@media (aspect-ratio: 820/1180) {
+
+      .logos-section {
+
+            width: 80%;
+            align-items: center;
+            justify-content: center;
+      }
+}
