@@ -1,0 +1,18 @@
+.hamburger {
+      height: 30px;
+      width: 30px;
+      position: absolute;
+      justify-content: space-evenly;
+      align-items: center;
+      gap: 5px;
+      flex-direction: column;
+      left: 85vw;
+      top: 2vh;
+      display: flex;
+}
+
+.hamburger-stroke {
+      height: 5px;
+      width: 100%;
+      background-color: #FF90E8;
+}
