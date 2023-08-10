@@ -199,6 +199,77 @@
 
 }
 
+@media screen and (max-width: 912px) {
+
+
+      .first-section {
+            position: relative;
+            height: calc(100vh - 1rem);
+            width: 100vw;
+            max-height: 100vh;
+      }
+
+
+      .pink-field-div {
+            position: absolute;
+            font-size: 2.2rem;
+            margin-left: calc(4rem + 1vw);
+            margin-top: calc(23rem + 5vh);
+            background-color: #FF90E8;
+            width: calc(35rem + 29vw);
+            padding: 20px;
+      }
+
+      .colorfields-section {
+            position: absolute;
+            background-color: transparent;
+            width: calc(14rem + 15vw);
+            height: 16rem;
+            margin-left: calc(20rem + 25vw);
+            margin-top: 33rem;
+      }
+
+      .field {
+
+            width: calc(8rem + 8vw);
+            height: 3rem;
+            border-radius: 40px;
+            font-size: 2rem;
+            font-family: "Nohemi Bold";
+            box-shadow: 1px 4px 1px black;
+            padding: 40px;
+      }
+
+      .field:nth-of-type(1) {
+            margin-left: -5rem;
+            background-color: #EE8F9E;
+            margin-top: 8vh;
+            rotate: 30deg;
+      }
+
+      .field:nth-of-type(2) {
+            margin-left: 7rem;
+            margin-top: 4rem;
+            rotate: 20deg;
+            background-color: #30A69A;
+      }
+
+      .field:nth-of-type(3) {
+            margin-left: -8rem;
+            margin-top: 15rem;
+            background-color: #CFED90;
+            rotate: 15deg;
+      }
+
+      .field:nth-of-type(4) {
+            margin-left: 7rem;
+            margin-top: 14rem;
+            background-color: #90CCED;
+            rotate: -33deg;
+      }
+
+}
+
 @media screen and (max-width: 768px) {
 
 

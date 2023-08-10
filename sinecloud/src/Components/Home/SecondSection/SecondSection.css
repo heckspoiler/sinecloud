@@ -53,6 +53,22 @@ h2 {
 }
 
 
+@media screen and (max-width: 912px) {
+
+      .second-section {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-top: 5rem;
+      }
+
+
+}
+
 @media screen and (max-width: 768px) {
 
       .second-section h2,
@@ -125,4 +141,3 @@ h2 {
 
 
 }
-

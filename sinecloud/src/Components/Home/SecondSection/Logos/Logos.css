@@ -30,6 +30,23 @@
       }
 }
 
+@media screen and (max-width: 912px) {
+
+      .radio-img {
+            scale: 0.5;
+            opacity: 0;
+      }
+
+      .logos-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: normal;
+            justify-content: center;
+            height: 70%;
+            width: 88%;
+      }
+}
+
 
 @media screen and (max-width: 720px) {
 
