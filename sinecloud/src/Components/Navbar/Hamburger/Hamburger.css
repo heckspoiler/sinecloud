@@ -1,18 +1,43 @@
 .hamburger {
       height: 30px;
-      width: 30px;
+      width: 35px;
       position: absolute;
       justify-content: space-evenly;
       align-items: center;
       gap: 5px;
       flex-direction: column;
       left: 85vw;
-      top: 2vh;
+      top: 3vh;
       display: flex;
+      z-index: 10;
 }
 
 .hamburger-stroke {
+
       height: 5px;
-      width: 100%;
+      width: 80%;
       background-color: #FF90E8;
+      border-radius: 10px;
+      transition: transform 0.3s ease-in-out opacity 0.3s ease-in-out;
+}
+
+.hamburger:hover {
+      cursor: pointer;
+}
+
+.stroke-1 {
+      position: absolute;
+      transform: rotate(45deg);
+
+
+}
+
+.stroke-2 {
+      opacity: 0;
+}
+
+.stroke-3 {
+      position: absolute;
+      transform: rotate(-45deg);
+
 }

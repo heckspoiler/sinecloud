@@ -3,7 +3,6 @@ import React, { Suspense, lazy, useEffect, useState } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "intersection-observer";
-import { motion } from "framer-motion";
 import { Home } from "./Components/Home/Home";
 import { Navbar } from "./Components/Navbar/Navbar";
 import { Stations } from "./Components/Stations/Stations";
@@ -13,6 +12,14 @@ const Feed = lazy(() => import("./Components/Feed/Feed"));
 
 function App() {
   const [data, setData] = useState([]);
+  const [isMenuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen((prev) => {
+      console.log("Toggling menu:", !prev);
+      return !prev;
+    }, []);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,8 +38,8 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Hamburger />
-        <Navbar />
+        <Hamburger isOpen={isMenuOpen} toggleMenu={toggleMenu} />
+        <Navbar isOpen={isMenuOpen} toggleMenu={toggleMenu} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/stations" element={<Stations />} />

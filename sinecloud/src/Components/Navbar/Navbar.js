@@ -4,9 +4,9 @@ import { NavbarItems } from "./NavbarItems/NavbarItems";
 import { SearchBar } from "./SearchBar/SearchBar";
 import { LoginSection } from "./LoginSection/LoginSection";
 
-export const Navbar = () => {
+export const Navbar = ({isOpen, toggleMenu}) => {
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${isOpen ? "navbar-open" : ""}`}>
       <NavbarItems />
       {/* <SearchBar /> */}
 
