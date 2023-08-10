@@ -5,3 +5,12 @@ h1 {
       font-family: "Nohemi Bold";
       margin-top: 4rem;
 }
+
+@media screen and (max-width: 1180px) {
+
+
+      h1 {
+            font-size: 8rem;
+      }
+
+}

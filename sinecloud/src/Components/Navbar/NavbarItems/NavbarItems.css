@@ -29,3 +29,43 @@ ul.navbar-items {
 .navbar-link:hover::before {
       width: 2%;
 }
+
+
+@media screen and (max-width: 1024px) {
+
+      ul.navbar-items {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            list-style: none;
+            height: 100%;
+            padding-right: 20px;
+            gap: calc(4rem + 1vw);
+            padding-left: 40px;
+      }
+
+
+      .navbar-link:hover::before {
+            width: 3%;
+      }
+
+
+}
+
+@media screen and (max-width: 768px) {
+
+
+
+      ul.navbar-items {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            list-style: none;
+            height: 100%;
+            padding-right: 20px;
+            gap: calc(1rem + 1.5vw);
+            padding-left: 40px;
+      }
+
+
+}
