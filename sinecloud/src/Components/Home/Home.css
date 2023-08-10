@@ -206,7 +206,7 @@
             position: absolute;
             font-size: 1.6rem;
             margin-left: calc(5rem + 10vw);
-            margin-top: calc(18rem + 5vh);
+            margin-top: calc(23rem + 5vh);
             background-color: #FF90E8;
             width: calc(35rem + 5vw);
       }
@@ -214,15 +214,15 @@
       .colorfields-section {
             position: absolute;
             background-color: transparent;
-            width: calc(14rem + 15vw);
+            width: calc(14rem + 18vw);
             height: 16rem;
             margin-left: calc(15rem + 25vw);
-            margin-top: 28rem;
+            margin-top: 33rem;
       }
 
       .field {
 
-            width: calc(4rem + 4vw);
+            width: calc(4rem + 8vw);
             height: 3rem;
             border-radius: 40px;
             font-size: 1.3rem;

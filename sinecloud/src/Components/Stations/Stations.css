@@ -1,5 +1,5 @@
 .stations-container {
-      height: 100100%;
+      height: 100%;
       width: 100vw;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
@@ -22,6 +22,22 @@
       letter-spacing: -3px;
       font-size: 4rem;
       color: white;
+}
+
+@media screen and (max-width: 768px) {
+      .stations-container {
+            height: 100%;
+            width: 100vw;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            justify-content: center;
+            align-items: center;
+            row-gap: calc(1rem + 8vw);
+            column-gap: calc(0.8rem + 5vw);
+            padding-top: calc(11rem + 4vw);
+
+      }
+
 }
 
 @media screen and (max-width: 720px) {
