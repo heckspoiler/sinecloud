@@ -135,3 +135,36 @@
       background-color: #90CCED;
       rotate: -33deg;
 }
+
+@media screen and (max-width: 1024px) {
+
+
+      .pink-field-div {
+            position: absolute;
+            font-size: 1.6rem;
+            margin-left: calc(10rem + 15vw);
+            margin-top: calc(12rem + 5vh);
+            background-color: #FF90E8;
+            width: calc(35rem + 5vw);
+      }
+
+      .colorfields-section {
+            position: absolute;
+            background-color: transparent;
+            width: calc(14rem + 15vw);
+            height: 16rem;
+            margin-left: calc(20rem + 25vw);
+            margin-top: 22rem;
+      }
+
+      .field {
+
+            width: calc(4rem + 4vw);
+            height: 3rem;
+            border-radius: 40px;
+            font-size: 1.3rem;
+            font-family: "Nohemi Bold";
+            box-shadow: 1px 4px 1px black;
+      }
+
+}
