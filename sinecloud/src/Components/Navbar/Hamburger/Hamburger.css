@@ -4,7 +4,7 @@
       position: absolute;
       justify-content: space-evenly;
       align-items: center;
-      gap: 5px;
+      gap: 2px;
       flex-direction: column;
       left: 85vw;
       top: 3vh;

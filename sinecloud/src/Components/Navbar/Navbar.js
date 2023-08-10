@@ -7,7 +7,7 @@ import { LoginSection } from "./LoginSection/LoginSection";
 export const Navbar = ({ isOpen, toggleMenu }) => {
   return (
     <nav className={`navbar ${isOpen ? "navbar-open" : ""}`}>
-      <NavbarItems onClick={toggleMenu} />
+      <NavbarItems onItemClicked={toggleMenu} />
       {/* <SearchBar /> */}
 
       <LoginSection />
