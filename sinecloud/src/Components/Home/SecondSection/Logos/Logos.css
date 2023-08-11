@@ -86,6 +86,20 @@
 
 }
 
+@media screen and (max-width: 320px) {
+      .radio-img {
+            scale: 0.4;
+            opacity: 0;
+      }
+
+      .logos-section {
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+      }
+}
+
 @media (aspect-ratio: 820/1180) {
 
       .logos-section {
