@@ -103,3 +103,22 @@
             color: white;
       }
 }
+
+@media screen and (max-width: 512px) {
+
+      .stations-container {
+            height: 100%;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-content: center;
+            align-items: center;
+            row-gap: calc(1rem + 8vw);
+            column-gap: calc(0.8rem + 5vw);
+            padding: calc(4rem + 8vw) 6rem calc(4rem + 8vw) 6rem;
+            margin-top: 40%;
+
+      }
+
+
+}
