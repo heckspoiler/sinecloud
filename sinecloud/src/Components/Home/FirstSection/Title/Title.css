@@ -28,7 +28,7 @@ h1 {
 @media screen and (max-width: 414px) {
 
       h1 {
-            font-size: 5rem;
+            font-size: calc(3rem + 5vw);
             margin-top: 6rem;
       }
 }

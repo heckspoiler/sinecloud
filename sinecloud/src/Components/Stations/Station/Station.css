@@ -175,7 +175,7 @@
       }
 
       .stations_radio-image {
-            height: calc(6rem + 12vw);
+            height: calc(6rem + 14vw);
             width: calc(6rem + 14vw);
             border-radius: 50%;
             padding: 20px;
@@ -210,5 +210,114 @@
             width: 1.7rem;
 
       }
+
+}
+
+
+
+@media screen and (max-width: 414px) {
+
+      .stations_radio-station {
+            display: flex;
+            padding: 15px;
+            flex-direction: column;
+            gap: 1.2rem;
+            justify-content: center;
+            align-items: center;
+
+
+      }
+
+      .stations_radio-image {
+            height: calc(4rem + 11vw);
+            width: calc(4rem + 11vw);
+            border-radius: 50%;
+            padding: 20px;
+            border: 4px solid white;
+            background-color: #1200FF;
+            background-image: linear-gradient(rgba(134, 138, 246, .3) .1em, transparent .08rem), linear-gradient(90deg, rgba(134, 138, 246, .3) .08rem, transparent .1em);
+            background-size: 2vw 2vw;
+            transition: border-color 0.2s ease-in, transform 0.2s ease-in;
+
+      }
+
+      .stations_radio-image:hover {
+
+            transform: translateY(-4%);
+
+      }
+
+      .stations_logo-container {
+            display: flex;
+            justify-content: center;
+            gap: calc(0.9rem + 1.2vw);
+            border: 2px solid white;
+            padding: 7px;
+            border-radius: 30px;
+            width: calc(7rem + 10vw);
+
+
+      }
+
+      .stations_social-svg {
+            height: 1.4rem;
+            width: 1.4rem;
+
+      }
+
+
+}
+
+
+@media screen and (max-width: 360px) {
+
+      .stations_radio-station {
+            display: flex;
+            padding: 15px;
+            flex-direction: column;
+            gap: 1.2rem;
+            justify-content: center;
+            align-items: center;
+
+
+      }
+
+      .stations_radio-image {
+            height: calc(3.7rem + 10vw);
+            width: calc(3.7rem + 10vw);
+            border-radius: 50%;
+            padding: 20px;
+            border: 4px solid white;
+            background-color: #1200FF;
+            background-image: linear-gradient(rgba(134, 138, 246, .3) .1em, transparent .08rem), linear-gradient(90deg, rgba(134, 138, 246, .3) .08rem, transparent .1em);
+            background-size: 2vw 2vw;
+            transition: border-color 0.2s ease-in, transform 0.2s ease-in;
+
+      }
+
+      .stations_radio-image:hover {
+
+            transform: translateY(-4%);
+
+      }
+
+      .stations_logo-container {
+            display: flex;
+            justify-content: center;
+            gap: calc(0.9rem + 1.2vw);
+            border: 2px solid white;
+            padding: 7px;
+            border-radius: 30px;
+            width: calc(7rem + 6vw);
+
+
+      }
+
+      .stations_social-svg {
+            height: 1.4rem;
+            width: 1.4rem;
+
+      }
+
 
 }
