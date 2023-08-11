@@ -105,7 +105,7 @@ ul.navbar-items {
             padding-right: 20px;
             gap: 40px;
             padding-left: 30px;
-            font-size: 1.7rem;
+            font-size: 1.4rem;
       }
 
       .navbar-link::before {
@@ -114,9 +114,13 @@ ul.navbar-items {
             display: block;
             height: 5px;
             width: 0;
-            background-color: black;
+            background-color: #FF90E8;
             transition: width 0.3s ease-in-out;
             margin-top: 35px !important;
+      }
+
+      .navbar-link {
+            color: #FF90E8 !important;
       }
 
       .navbar-link:hover::before {
@@ -137,7 +141,14 @@ ul.navbar-items {
             padding-right: 20px;
             gap: 40px;
             padding-left: 30px;
-            font-size: 1.7rem;
+            font-size: 1.4rem;
+            color: #FF90E8 !important;
+            
+
+      }
+
+      .navbar-link {
+            color: #FF90E8 !important;
       }
 
       .navbar-link::before {
@@ -146,7 +157,6 @@ ul.navbar-items {
             display: block;
             height: 5px;
             width: 0;
-            background-color: black;
             transition: width 0.3s ease-in-out;
             margin-top: 35px !important;
       }

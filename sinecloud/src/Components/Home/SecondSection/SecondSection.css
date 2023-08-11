@@ -147,7 +147,7 @@ h2 {
       .second-section h2,
       h2 {
             font-family: "Chopper";
-            font-size: 20px;
+            font-size: 2rem;
             color: #ececec;
             margin-left: 2rem;
 
@@ -155,13 +155,13 @@ h2 {
 
       .second-section {
             position: relative;
-            height: 100vh;
+            height: 100%;
             width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: space-evenly;
             align-items: center;
-            margin-top: 0;
+            margin-top: 3rem;
       }
 
 

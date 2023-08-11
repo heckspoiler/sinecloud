@@ -68,13 +68,13 @@
 @media screen and (max-width: 414px) {
 
       .radio-img {
-            scale: 0.3;
+            scale: 0.5;
             opacity: 0;
       }
 
       .logos-section {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             align-items: normal;
             justify-content: space-around;
             height: 70%;

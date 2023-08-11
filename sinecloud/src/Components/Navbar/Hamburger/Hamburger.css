@@ -10,13 +10,15 @@
       top: 3vh;
       display: flex;
       z-index: 10;
+      visibility: hidden;
 }
 
 .hamburger-stroke {
 
       height: 5px;
       width: 80%;
-      background-color: #FF90E8;
+      background-color: transparent;
+      border: 1px solid #FF90E8;
       border-radius: 10px;
       transition: transform 0.3s ease-in-out opacity 0.3s ease-in-out;
 }
@@ -28,6 +30,7 @@
 .stroke-1 {
       position: absolute;
       transform: rotate(45deg);
+      background-color: #FF90E8;
 
 
 }
@@ -39,5 +42,13 @@
 .stroke-3 {
       position: absolute;
       transform: rotate(-45deg);
+      background-color: #FF90E8;
 
+}
+
+@media screen and (max-width: 512px) {
+      .hamburger {
+
+            visibility: visible;
+      }
 }
