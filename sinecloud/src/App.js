@@ -11,6 +11,9 @@ import { Hamburger } from "./Components/Navbar/Hamburger/Hamburger";
 const Feed = lazy(() => import("./Components/Feed/Feed"));
 
 function App() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [data, setData] = useState([]);
   const [isMenuOpen, setMenuOpen] = useState(false);
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Station } from "./Station/Station";
 import "./Stations.css";
 import kioskradio from "./Station/Logos/radio-stations/kiosk-radio.png";
@@ -47,6 +47,9 @@ const stations = [
 ];
 
 export const Stations = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="stations-container">
       <h1>We love these stations!</h1>

@@ -25,6 +25,7 @@ const getLogoByUser = (user) => {
 };
 
 const Feed = () => {
+  const [scrollPosition, setScrollPosition] = useState(0);
   const [usersData, setUsersData] = useState([]);
   const [currentRadioStation, setCurrentRadioStation] = useState("");
   const [offset, setOffset] = useState(0);
@@ -32,6 +33,20 @@ const Feed = () => {
   const elementsRef = useRef([]);
   const limit = 5;
   const lastTrackRef = useRef();
+
+  useEffect(() => {
+    window.scrollTo(0, scrollPosition);
+
+    const handleScroll = () => {
+      setScrollPosition(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [scrollPosition]);
 
   const fetchTracks = () => {
     if (isLoading) {
