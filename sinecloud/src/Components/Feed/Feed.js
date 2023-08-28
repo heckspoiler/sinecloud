@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useTransition } from "react";
 import ReactPlayer from "react-player";
 import "./Feed.css";
 import faultradio from "../Home/SecondSection/Logos/radio-stations/fault-radio.png";
@@ -25,7 +25,6 @@ const getLogoByUser = (user) => {
 };
 
 const Feed = () => {
-  const [scrollPosition, setScrollPosition] = useState(0);
   const [usersData, setUsersData] = useState([]);
   const [currentRadioStation, setCurrentRadioStation] = useState("");
   const [offset, setOffset] = useState(0);
@@ -34,44 +33,35 @@ const Feed = () => {
   const limit = 5;
   const lastTrackRef = useRef();
 
-  useEffect(() => {
-    window.scrollTo(0, scrollPosition);
-
-    const handleScroll = () => {
-      setScrollPosition(window.scrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [scrollPosition]);
+  const [isPending, startTransition] = useTransition({
+    timeoutMs: 3000,
+  });
 
   const fetchTracks = () => {
     if (isLoading) {
       return;
     }
-
-    setIsLoading(true);
-    fetch(
-      `http://localhost:4000/api/soundcloud?offset=${offset}&limit=${limit}`
-    )
-      .then((response) => {
-        if (!response.ok)
-          throw new Error("Request failed with status " + response.status);
-        return response.json();
-      })
-      .then((data) => {
-        console.log(data);
-        setUsersData((oldData) => [...oldData, ...data.message]);
-        setOffset((oldOffset) => oldOffset + limit);
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        console.error(error);
-        setIsLoading(false);
-      });
+    startTransition(() => {
+      setIsLoading(true);
+      fetch(
+        `http://localhost:4000/api/soundcloud?offset=${offset}&limit=${limit}`
+      )
+        .then((response) => {
+          if (!response.ok)
+            throw new Error("Request failed with status " + response.status);
+          return response.json();
+        })
+        .then((data) => {
+          console.log(data);
+          setUsersData((oldData) => [...oldData, ...data.message]);
+          setOffset((oldOffset) => oldOffset + limit);
+          setIsLoading(false);
+        })
+        .catch((error) => {
+          console.error(error);
+          setIsLoading(false);
+        });
+    });
   };
 
   useEffect(() => {
@@ -130,6 +120,7 @@ const Feed = () => {
 
   return (
     <div className="feed">
+      <h1>{isPending ? "Loading..." : null}</h1>
       <h1>
         Feed me <br className="break-title" />
         new music

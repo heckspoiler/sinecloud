@@ -31,6 +31,7 @@ export const About = () => {
           </p>
         </section>
         <section className="about-container__content-subsection">
+          <h2>Why are we</h2>
           <p>
             Oh my god that's such a philosophical question! Music's got tons of
             faces, but most of them get buried in the crowd. Thanks to those
@@ -43,7 +44,6 @@ export const About = () => {
             out and share their beats. With this, we can at least try to escape
             the numbness of the cultural industry and make Adorno proud.
           </p>
-          <h2>Why are we</h2>
         </section>
       </section>
     </div>
