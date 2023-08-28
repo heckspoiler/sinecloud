@@ -27,7 +27,7 @@ export const About = () => {
             developing and implement some new features, like actually being able
             to create an account, and also optimize existing features. But I
             promise that from time to time, new, exciting radio stations will be
-            added to the feed. If you know some, holla at me down below!
+            added to the feed. If you know some, holla at me in discord!
           </p>
         </section>
         <section className="about-container__content-subsection">
