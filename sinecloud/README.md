@@ -44,7 +44,7 @@ The following challenges were faced during the development of this project:
 
 There are some areas that need improvement:
 
-- **Data Fetching Time**: Currently, the time taken to fetch data from the API and render it on the frontend is longer than ideal.
+- **Data Fetching Time**: Currently, the time taken to fetch data from the API and render it on the frontend is longer than ideal (might have to reload "Feed" to see content if you're going to try).
 - **Features**: Many features like sorting and filtering mixtapes are yet to be added.
 - **About Section**: The About section requires more detailed information about the project.
 - **Caching and Storage**: Plans to implement better data caching and server-sided storage are underway to improve performance.
@@ -54,3 +54,5 @@ There are some areas that need improvement:
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Have a visit! www.sinecloud.digital
